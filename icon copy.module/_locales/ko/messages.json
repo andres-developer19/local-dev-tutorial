@@ -1,0 +1,132 @@
+{
+  "accessibility_options.label" : {
+    "message" : "액세스 가능성 옵션",
+    "description" : "",
+    "placeholders" : null
+  },
+  "accessibility_options.purpose.choices.decorative" : {
+    "message" : "장식 - 화면 판독기에서 무시함",
+    "description" : "",
+    "placeholders" : null
+  },
+  "accessibility_options.purpose.choices.semantic" : {
+    "message" : "정보 - 화면 판독기로 읽음",
+    "description" : "",
+    "placeholders" : null
+  },
+  "accessibility_options.purpose.help_text" : {
+    "message" : "화면 판독기를 위한 이 아이콘의 목적을 범주화합니다. <a href='https://www.w3.org/WAI/tutorials/images/' target='_blank' rel='noopener noreferrer'>자세히 알아보기</a>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "accessibility_options.purpose.label" : {
+    "message" : "목적",
+    "description" : "",
+    "placeholders" : null
+  },
+  "accessibility_options.title.help_text" : {
+    "message" : "이 텍스트를 화면 판독기에서 읽고 아이콘을 설명하게 됩니다.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "accessibility_options.title.label" : {
+    "message" : "설명",
+    "description" : "",
+    "placeholders" : null
+  },
+  "icon.label" : {
+    "message" : "아이콘",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "아이콘",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.alignment.alignment.label" : {
+    "message" : "정렬",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.alignment.label" : {
+    "message" : "정렬",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.background.color.label" : {
+    "message" : "색상",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.background.label" : {
+    "message" : "배경",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.corner.label" : {
+    "message" : "코너",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.corner.radius.label" : {
+    "message" : "반경",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.corner.style.choices.custom" : {
+    "message" : "사용자 정의",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.corner.style.choices.round" : {
+    "message" : "둥글게",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.corner.style.choices.square" : {
+    "message" : "정사각형",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.corner.style.label" : {
+    "message" : "스타일",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.fill.color.label" : {
+    "message" : "색상",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.fill.label" : {
+    "message" : "채우기",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "스타일",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.size.label" : {
+    "message" : "크기",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.size.size.label" : {
+    "message" : "크기",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.spacing.label" : {
+    "message" : "간격",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.spacing.spacing.label" : {
+    "message" : "간격",
+    "description" : "",
+    "placeholders" : null
+  }
+}

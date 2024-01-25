@@ -1,0 +1,156 @@
+  {% set blog_select = module.blog|defualt("default") %}
+  {% set rec_posts = blog_recent_posts("default", 1) %}
+  <div class="mainPostContainer">
+    {% for post in rec_posts %}
+    <div class="featuredImageContainer">
+      <a href="{{ post.absolute_url }}">
+      <img src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}" {{ loadingAttr }} {{ sizeAttrs }} >
+      </a>
+    </div>
+    <div class="postContentContainer">
+      <div class="blog-post__meta">
+        <a class="author" href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author">
+          {{ post.blog_post_author.display_name }} 
+        </a>
+        <time datetime="{{ post.publish_date }}" class="blog-post__timestamp">
+          | {{ post.publish_date_localized }}
+        </time>
+      </div>
+      <div class="text-card">
+        <a href="{{ post.absolute_url }}">
+        <h2 class="post-title">{{ post.name }}</h2>
+        </a>
+        <p class="post-description">{{ post.post_list_content|striptags|truncatehtml(450) }}</p>{# {{ post.post_summary|truncatehtml(100) }} #}
+    </div>
+    <div class="button-card">
+      <a href="{{ post.absolute_url }}" class="btn-card">Button →</a>
+    </div>
+    </div>
+    
+  {% endfor %}
+  </div>
+
+{% require_css %}
+<style>
+	{% scope_css %}
+        .mainPostContainer {
+      width: 100%;
+      display: flex;
+    }
+    .featuredImageContainer {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding-right: 80px;
+    }
+  .featuredImageContainer a img {
+    width:100%;
+    object-fit:cover;
+  }
+    .postContentContainer {
+      width: 100%;
+      display: flex;
+      flex-direction:column;
+      justify-content: flex-start;
+    }
+    .postContentContainer .blog-post__meta {
+      width: 100%;
+      display: flex;
+    }
+    .postContentContainer .blog-post__meta .author {
+      color: #252525;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 29px;
+    }
+    .postContentContainer .blog-post__meta .blog-post__timestamp {
+      color: #414141;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 29px;
+    }
+
+    .postContentContainer .text-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .postContentContainer .text-card .post-title {
+      color: #252525;
+      font-family: Montserrat;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 132%;
+    }
+    .postContentContainer .text-card .post-description {
+      color: #414141;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 29px; 
+    }
+
+    .postContentContainer .button-card .btn-card {
+      display: flex;
+      padding: 10px 0px;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      color: #FD097A;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+    }
+  
+  @media screen and (max-width:1024px) {
+     .mainPostContainer {
+      width: 100%;
+      display: flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+       gap:40px;
+    }  
+    
+    .featuredImageContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      padding:0;
+    }
+    .postContentContainer {
+      width: 100%;
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items:center;
+    }
+    .postContentContainer .blog-post__meta {
+      width: 100%;
+      display: flex;
+      justify-content:center;
+    }    
+    .postContentContainer .text-card .post-title {
+      text-align:center;
+      text-wrap:pretty;
+      font-size: 30px;
+    }
+    .postContentContainer .text-card .post-description {
+      text-align:center;
+      text-wrap:pretty; 
+    }    
+  }
+	{% end_scope_css %}
+</style>
+{% end_require_css %}

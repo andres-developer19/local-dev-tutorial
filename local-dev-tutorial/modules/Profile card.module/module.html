@@ -1,0 +1,42 @@
+<div class="grid-card_team-section">
+{% for item in module.card %}
+<div class="box-image">
+    <div class="img-profile">
+		<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    </div>
+    <div class="content-text">
+        <h3>{{ item.name_ }}</h3>
+        <h4>{{ item.role }}</h4>
+    </div>
+</div>
+{% endfor %}
+  
+</div>
+{% require_css %}
+<style>
+{% scope_css %}
+.grid-card_team-section{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat({% if module.styles.grid.columns %}{{ module.styles.grid.columns }}{% endif %}, 278px);
+    justify-content:center;
+    align-items:center;
+    gap:36px;
+}
+  
+  .box-image {
+    display: inline-flex;
+    padding: 32px 32px 40px 32px;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px 0px #00000011;
+  
+  position: relative;
+  padding:0;
+}
+{% end_scope_css %}
+</style>
+{% end_require_css %}  

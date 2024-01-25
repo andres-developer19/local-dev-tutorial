@@ -1,0 +1,23 @@
+
+
+.pricing-details {
+ list-style: none;
+ padding: 0;
+ margin: 36px 0;
+}
+
+.pricing-details .icon {
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+
+.pricing-details li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+
+

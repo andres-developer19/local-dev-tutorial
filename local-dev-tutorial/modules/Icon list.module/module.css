@@ -1,0 +1,15 @@
+.icon-list {
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.icon-list li {
+  display:flex;
+  justify-content: flex-start;
+  align-items:center;
+  gap: 16px;
+}
+
+
+

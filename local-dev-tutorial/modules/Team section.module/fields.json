@@ -1,0 +1,410 @@
+[ {
+  "id" : "1a151bc6-db86-2cb2-b90a-8d2e6cd5e8ee",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "54af6451-0a5c-3851-a235-9c1bd56aed58",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Meet our team"
+  }, {
+    "id" : "2fb91267-ce33-918a-39dc-62c1a35ae8b3",
+    "name" : "richtext_field",
+    "display_width" : null,
+    "label" : "Rich text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "We’re a dynamic group of individuals who are passionate about what we do."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Meet our team",
+    "richtext_field" : "We’re a dynamic group of individuals who are passionate about what we do."
+  }
+}, {
+  "id" : "f30c0e82-d2de-b152-1a52-224704fb262a",
+  "name" : "profile",
+  "display_width" : null,
+  "label" : "profile",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "8402b88a-5c80-c184-7fd7-ba4dfc067956",
+    "name" : "image_profile",
+    "display_width" : null,
+    "label" : "Image profile",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    }
+  }, {
+    "id" : "dac1e4bd-2073-3e30-def5-aed2c555e58d",
+    "name" : "name_profile",
+    "display_width" : null,
+    "label" : "Name profile",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Leonard Krasner"
+  }, {
+    "id" : "0c545121-9561-7fd7-f880-81f00d37cc77",
+    "name" : "role_profile",
+    "display_width" : null,
+    "label" : "Role profile",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Senior Designer"
+  }, {
+    "id" : "873a1e67-6492-7ab2-0c98-ad8823e489c7",
+    "name" : "social",
+    "display_width" : null,
+    "label" : "Social",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "6d7c021e-6671-ee2b-267f-7ed0bb9ffd4c",
+      "name" : "social_network",
+      "display_width" : null,
+      "label" : "Social network",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Twitter"
+    }, {
+      "id" : "ceb4b58d-b87b-0aa0-0a99-49f6e117130c",
+      "name" : "social_icon",
+      "display_width" : null,
+      "label" : "Social icon",
+      "required" : false,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.0.10",
+      "type" : "icon",
+      "default" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      }
+    }, {
+      "id" : "3c0bd5c9-f9cc-4692-3d4c-ffaaec84dae3",
+      "name" : "url",
+      "display_width" : null,
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL" ],
+      "type" : "url",
+      "default" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    },
+    "name_profile" : "Leonard Krasner",
+    "role_profile" : "Senior Designer",
+    "social" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  }, {
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    },
+    "name_profile" : "Leonard Krasner",
+    "role_profile" : "Senior Designer",
+    "social" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  }, {
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    },
+    "name_profile" : "Leonard Krasner",
+    "role_profile" : "Senior Designer",
+    "social" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  }, {
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    },
+    "name_profile" : "Leonard Krasner",
+    "role_profile" : "Senior Designer",
+    "social" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  }, {
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    },
+    "name_profile" : "Leonard Krasner",
+    "role_profile" : "Senior Designer",
+    "social" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  }, {
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/team-1.jpg",
+      "alt" : "team-1",
+      "loading" : "lazy",
+      "width" : 800,
+      "height" : 800,
+      "max_width" : 800,
+      "max_height" : 800
+    },
+    "name_profile" : "Leonard Krasner",
+    "role_profile" : "Senior Designer",
+    "social" : [ {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "social_network" : "Twitter",
+      "social_icon" : {
+        "name" : "twitter",
+        "unicode" : "f099",
+        "type" : "REGULAR"
+      },
+      "url" : {
+        "content_id" : null,
+        "href" : "https://twitter.com/",
+        "type" : "EXTERNAL"
+      }
+    } ]
+  } ]
+} ]

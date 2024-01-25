@@ -1,0 +1,396 @@
+{% require_css %}
+<style>
+	{% scope_css %}
+
+  .container-card {
+    display: {{ module.styles.container.display }};
+    {% if module.styles.container.flex_direction %}
+    flex-direction: {{ module.styles.container.flex_direction }};
+    {% endif %}
+   {% if module.styles.container.alignment.horizontal_align %}
+   {% if module.styles.container.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.container.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.container.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}
+  
+  
+   {% if module.styles.container.alignment.vertical_align %}
+   {% if module.styles.container.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.container.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.container.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+  }  
+
+.card-price {
+    background: rgba({{ module.styles.card.color.color|convert_rgb }}, {{ module.styles.card.color.opacity / 100 }});
+    {{ module.styles.card.border.css }};
+    {{ module.styles.card.spacing.css }};
+    border-radius: {{ module.styles.card.radius ~ "px" }};
+    max-width: {{ module.styles.card.width ~ "px" }};
+    width:100%;
+    height:auto;
+}
+
+.titleHeader {
+    {{ module.styles.title.font.css }};
+    line-height: {{ module.styles.title.line_height ~ "px" }}; 
+    {{ module.styles.title.spacing.css }};
+    {{ module.styles.title.textalignment.text_align }};
+}
+
+.toggle-buttons {
+    display: {{ module.styles.buttons_box.display }};
+    flex-direction:{{ module.styles.buttons_box.flex_direction }};
+    width: {{ module.styles.buttons_box.width ~ "%" }};
+    {{ module.styles.buttons_box.spacing.css }};
+    {{ module.styles.buttons_box.border.css }};
+   {% if module.styles.buttons_box.alignment.horizontal_align %}
+   {% if module.styles.buttons_box.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.buttons_box.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.buttons_box.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}
+  
+  
+   {% if module.styles.buttons_box.alignment.vertical_align %}
+   {% if module.styles.buttons_box.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.buttons_box.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.buttons_box.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+}
+
+.toggle-button {
+    cursor: pointer;
+    width:{{ module.styles.button.width ~ "%" }};
+    {{ module.styles.button.spacing.css }};
+    background: rgba({{ module.styles.button.color.color|convert_rgb }}, {{ module.styles.button.color.opacity / 100 }});
+    {{ module.styles.button.font_field.css }};
+    {{ module.styles.button.border.css }};
+    border-radius: {{ module.styles.button.radius ~ "px" }};
+    transition: background-color 0.3s;
+}
+
+.toggle-button.active {
+    background-color: rgba({{ module.styles.button_active.color.color|convert_rgb }}, {{ module.styles.button_active.color.opacity / 100 }});
+    {{ module.styles.button_active.font.css }};
+}
+
+.price {
+    width: 100%;
+    {{ module.styles.price.spacing.css }};    
+}
+
+    .priceNumber {
+    {{ module.styles.price.font.css }};
+    line-height: {{ module.styles.price.line_height ~ "px" }};
+}
+.priceTime {
+    {{ module.styles.quota.font.css }};
+    {{ module.styles.quota.line_height ~ "px" }};
+}
+.decriptionPrice {
+
+    {{ module.styles.price_label.spacing.css }};
+}
+.descriptionNumber {
+    {{ module.styles.price_label.font.css }};
+    {{ module.styles.price_label.line_height ~ "px" }};                
+}
+
+.features {
+    {{ module.styles.features.spacing.css }};
+}
+
+.list-icon {
+    display: {{ module.styles.features.display }};
+    flex-direction: {{ module.styles.features.flex_direction }};
+   {% if module.styles.features.alignment.horizontal_align %}
+   {% if module.styles.features.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.features.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.features.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}
+  
+  
+   {% if module.styles.features.alignment.vertical_align %}
+   {% if module.styles.features.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.features.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.features.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+    gap:{{ module.styles.features.gap ~ "px" }};
+    list-style:none;
+}
+
+.list-icon .list-icon_item {
+    {{ module.styles.list_item.font.css }};
+    line-height: {{ module.styles.list_item.line_height ~ "px" }};
+    display:{{ module.styles.list_item.display }};
+    {% if module.styles.list_item.alignment.horizontal_align %}
+   {% if module.styles.list_item.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.list_item.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.list_item.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}
+  
+  
+   {% if module.styles.list_item.alignment.vertical_align %}
+   {% if module.styles.list_item.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.list_item.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.list_item.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+    gap: {{ module.styles.list_item.gap ~ "px" }};
+}
+
+.list-icon .list-icon_item .icons {
+    display: {{ module.styles.box_icon.display }};
+    flex-direction: {{ module.styles.box_icon.flex_direction }};
+    width: {{ module.styles.box_icon.width ~ "px" }};
+    height: {{ module.styles.box_icon.height ~ "px" }};
+   {% if module.styles.box_icon.alignment.horizontal_align %}
+   {% if module.styles.box_icon.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.box_icon.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.box_icon.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}  
+  
+   {% if module.styles.box_icon.alignment.vertical_align %}
+   {% if module.styles.box_icon.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.box_icon.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.box_icon.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+    background-color: rgba({{ module.styles.box_icon.color.color|convert_rgb }}, {{ module.styles.box_icon.color.opacity / 100 }});
+    border-radius: {{ module.styles.box_icon.radius ~ "%" }};
+}
+  
+.list-icon .list-icon_item .icons span {
+    display: {{ module.styles.box_icon.display }};
+    flex-direction: {{ module.styles.box_icon.flex_direction }};
+    width: {{ module.styles.box_icon.width ~ "px" }};
+    height: {{ module.styles.box_icon.height ~ "px" }};
+   {% if module.styles.box_icon.alignment.horizontal_align %}
+   {% if module.styles.box_icon.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.box_icon.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.box_icon.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}  
+  
+   {% if module.styles.box_icon.alignment.vertical_align %}
+   {% if module.styles.box_icon.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.box_icon.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.box_icon.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+  }
+
+.list-icon .list-icon_item .icons svg {
+  width:14px;
+  height:16px;
+  color:#000;
+  fill:#000;
+}
+
+
+.btn-block a {
+    width: {{ module.styles.button_submit.width ~ "%" }};
+    display: {{ module.styles.button_submit.display }};
+   {% if module.styles.button_submit.alignment.horizontal_align %}
+   {% if module.styles.button_submit.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.button_submit.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.button_submit.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}  
+  
+   {% if module.styles.button_submit.alignment.vertical_align %}
+   {% if module.styles.button_submit.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.button_submit.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.button_submit.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+    background-color: rgba({{ module.styles.button_submit.color.color|convert_rgb }}, {{ module.styles.button_submit.color.opacity / 100 }});
+    {{ module.styles.button_submit.font.css }};
+    line-height: normal;
+    {{ module.styles.button_submit.spacing.css }};
+    border-radius: {{ module.styles.button_submit.radius ~ "px" }};
+    cursor: pointer;
+  {{ module.styles.button_submit.border.css }};
+}
+  
+  @media screen and (max-width:1023px) {
+      .container-card {
+    display: {{ module.styles.mobile.container.display }};
+    {% if module.styles.mobile.container.flex_direction %}
+    flex-direction: {{ module.styles.mobile.container.flex_direction }};
+    {% endif %}
+   {% if module.styles.mobile.container.alignment.horizontal_align %}
+   {% if module.styles.mobile.container.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.mobile.container.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.mobile.container.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}
+  
+  
+   {% if module.styles.mobile.container.alignment.vertical_align %}
+   {% if module.styles.mobile.container.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.mobile.container.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.mobile.container.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+  }
+    .card-price {
+    {{ module.styles.mobile.card.spacing.css }};
+    }
+    .titleHeader {
+    {{ module.styles.mobile.title.font.css }};
+    {{ module.styles.mobile.title.textalignment.css }};
+    }
+    .toggle-button {
+      {{ module.styles.mobile.button_toggle.font.css }};
+    {{ module.styles.mobile.button_toggle.spacing.css }};
+    }
+    .priceNumber {
+    {{ module.styles.mobile.price.font.css }};
+    line-height: {{ module.styles.mobile.price.line_height ~ "px" }};
+    }
+    
+    .priceTime {
+    {{ module.styles.mobile.quota.font.css }};
+    line-height: {{ module.styles.mobile.quota.line_height ~ "px" }};
+    }
+    
+    .list-icon .list-icon_item {
+    {{ module.styles.mobile.list_item.font.css }};
+    line-height: {{ module.styles.mobile.list_item.line_height ~ "px" }};
+    }
+  }
+  
+    @media screen and (max-width:399px) {
+    .card-price {
+    padding: 32px 22px 40px 22px;
+    }
+    .toggle-button {
+    padding: 16px 20px;
+    }
+  }
+
+	{% end_scope_css %}
+</style>
+{% end_require_css %}
+<div class="container-card">
+
+<div class="card-price">
+<header>
+    <h2 class="titleHeader" id="titleMonthly">{{ module.monthly.title }}</h2>
+    <h2 class="titleHeader" id="titleAnnual" style="display: none;">{{ module.annual.title }}</h2>
+</header>
+<div class="toggle-buttons">
+    <a class="toggle-button active">
+      <div>
+        {{ module.monthly.switch_button_text }}
+      </div>
+      
+  </a>
+    <a class="toggle-button">
+    <div>
+      {{ module.annual.switch_button_text }}
+    </div>
+    <div class="saving">
+        Save $1,599
+      </div>
+  </a>
+</div>
+<div class="price">
+    <h3 id="monthlyPrice"  class="priceNumber">{{ module.monthly.price }}<span class="priceTime">{{ module.monthly.price_period }}</span></h3>
+    <h3 id="annualPrice" class="priceNumber" style="display: none;">{{ module.annual.price }}<span class="priceTime">{{ module.annual.price_period }}</span></h3>
+</div>
+
+
+<div class="decriptionPrice">
+    <span id="monthlyDescription"  class="descriptionNumber">{{ module.monthly.price_label }}</span>
+    <span id="annualDescription" class="descriptionNumber" style="display: none;">{{ module.annual.price_label }}</span>
+</div>
+
+<div class="features">
+<ul role="list" class="list-icon">
+{% for item in module.features %}
+	
+
+  <li> 
+  <a class="list-icon_item">      
+    <span class="icons">
+      {% icon
+        name="{{ item.icon.name }}"
+        style="{{ item.icon.type }}"
+        unicode="{{ item.icon.unicode }}"
+        icon_set="{{ item.icon.icon_set }}"
+      %}
+    </span>
+   {% inline_text field="feature" value="{{ item.feature }}" %}
+  </a>
+  </li>
+  
+{% endfor %}
+</ul>
+</div>
+
+<div class="btn-block" id="btnMonthly">
+    <a href="{{ module.monthly.button.link.url.href }}">{{ module.monthly.button.text_button }}</a>
+</div>
+<div class="btn-block" id="btnAnnual"  style="display: none;">
+    <a href="{{ module.annual.button.link.url.href }}">{{ module.annual.button.text_button }}</a>
+</div>
+</div>  
+</div>

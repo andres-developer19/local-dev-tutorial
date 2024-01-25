@@ -1,0 +1,213 @@
+ {% set blog_select = module.blog|defualt("default") %}
+{% set rec_posts = blog_recent_posts("default") %}
+<div class="card-image_grid">
+  {% for post in contents %}
+  {# {% for post in rec_posts %}  #}
+	<div class="card">
+    {% if module.show_image == true %}
+    <div class="card-image">
+      <img src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}" {{ loadingAttr }} {{ sizeAttrs }} >
+    </div>
+    {% endif %}
+    <div class="card-content">
+      {% if module.tag_time == true %}
+      
+        <div class="tag-card">
+          {% for tag in post.tag_list %}
+            <a class="tag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag }}</a>{% if not loop.last %},{% endif %}
+          {% endfor %}
+        </div>
+       {% else %}
+        <time datetime="{{ post.publish_date }}" class="blog-post__timestamp">
+          {{ format_datetime(post.publish_date, "short", "America/New_York", "en") }}
+        </time>
+        {% endif %}
+        <div class="text-card">
+          <a href="{{ post.absolute_url }}">
+            <h2 class="post-title">{{ post.name }}</h2>
+          </a>
+          <p class="post-description">{{ post.post_list_content|striptags|truncatehtml(100) }}</p>
+            {# {{ post.post_summary|truncatehtml(100) }} #}
+        </div>
+        <div class="button-card">
+          <a href="{{ post.absolute_url }}" class="btn-card">Button →</a>
+        </div>
+    </div>
+</div>
+  {% endfor %}
+  
+
+</div>
+
+{% require_css %}
+<style>
+{% scope_css %}
+
+  .card-image_grid {
+  display:grid;
+    gap:32px;
+  grid-template-columns: repeat({% if module.styles.grid.columns %}{{ module.styles.grid.columns }}{% endif %}, 385px);
+  justify-content: space-between;
+}
+  .card {
+    display:flex;
+    flex-direction: {{ module.styles.card.flex_direction }};
+    align-items: {% if  module.styles.card.alignment.vertical_align == "TOP" %}flex-start{% elif  module.styles.card.alignment.vertical_align == "MIDDLE" %}center{% else %}flex-end{% endif %};
+    justify-content: {% if  module.styles.card.alignment.horizontal_align == "LEFT" %}flex-start{% elif  module.styles.card.alignment.horizontal_align == "CENTER" %}center{% else %}flex-end{% endif %};
+    border-radius: {{ module.styles.card.radius ~ "px"}};
+    width: 100%;
+    height: auto;
+    
+}
+  .card:hover {
+  border:1px solid #b5b5b5;
+  }
+    
+.card .card-image {
+    width: 100%;
+    height: 238px;
+    border-radius: 16px 16px 0px 0px;
+}
+.card .card-image img {
+    width: 100%;
+    height:238px;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+}
+  
+  .card .card-content {
+    {{ module.styles.card_content.spacing.css }};
+    flex-direction: {{ module.styles.card_content.flex_direction }};
+    align-items: {% if  module.styles.card_content.alignment.vertical_align == "TOP" %}flex-start{% elif  module.styles.card_content.alignment.vertical_align == "MIDDLE" %}center{% else %}flex-end{% endif %};
+    justify-content: {% if  module.styles.card_content.alignment.horizontal_align == "LEFT" %}flex-start{% elif  module.styles.card_content.alignment.horizontal_align == "CENTER" %}center{% else %}flex-end{% endif %};
+    border-radius: {{ module.styles.card_content.radius.border_top_left_radius ~ 'px' }} {{ module.styles.card_content.radius.border_top_right_radius ~ 'px' }} {{ module.styles.card_content.radius.border_bottom_right_radius ~ 'px' }} {{ module.styles.card_content.radius.border_bottom_left_radius ~ 'px' }};
+    display: flex;
+    width: 383px;
+    background-color: rgba({{ module.styles.card_content.background.color|convert_rgb }}, {{ module.styles.card_content.background.opacity / 100 }});
+    border-radius: 16px;
+}
+.tag-card .tag {
+  {{ module.styles.tag.font.css }};
+  line-height:{{ module.styles.tag.line_height ~ "px" }};
+  }
+  .text-card a .post-title {
+    {{ module.styles.title.font.css }};
+    line-height:{{ module.styles.title.line_height ~ "px" }};
+} 
+  
+.text-card .post-description {
+  {{ module.styles.description.font.css }};
+  line-height:{{ module.styles.description.line_height ~ "px" }};
+    margin-bottom: 32px;
+} 
+  
+  .card .card-content .button-card .btn-card {
+  {{ module.styles.button.spacing.css }};
+    border-radius: {{ module.styles.button.radius ~ "px" }};
+    {{ module.styles.button.border.css }};
+    {{ module.styles.button.font.css }};
+    line-height:{{ module.styles.button.line_height ~ "px" }};
+  }
+  
+  
+  
+  
+  
+  
+
+.card .card-content {
+display: flex;
+}
+.card .card-content .tag-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.card .card-content .tag-card a {
+    margin-bottom: 4px;
+}
+.card .card-content .text-card h3 {
+    margin-bottom: 4px;
+}  
+.card .card-content .button-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .card-content .button-card .btn-card {
+    display: flex;
+    width: 100%;
+    height: 52px;
+    flex-direction: column;
+  {% if module.styles.button.alignment.horizontal_align %}
+      {% if module.styles.button.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.button.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.button.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %}
+{% if module.styles.button.alignment.vertical_align %}
+      {% if module.styles.button.alignment.vertical_align == "TOP" %}
+        align-items: flex-start;
+      {% elif module.styles.button.alignment.vertical_align == "MIDDLE" %}
+        align-items: center;
+      {% elif module.styles.button.alignment.vertical_align == "BOTTOM" %}
+        align-items: flex-end;
+      {% endif %}
+      {% endif %}
+    gap: 10px;
+    text-decoration: none;
+}
+  
+    @media (max-width:1244px){
+    .card-image_grid {
+    width:100%;
+    display:grid;
+    gap:16px;
+    grid-template-columns: repeat(2, 360px);
+    justify-content:center;
+}
+  }
+
+  @media (max-width:1024px){
+    .card-image_grid {
+    display:grid;
+    gap:16px;
+    grid-template-columns: repeat(2, 385px);
+    justify-content:center;
+}
+  }
+
+  @media (max-width:768px){
+    .card-image_grid {
+    display:grid;
+    gap:16px;
+    grid-template-columns: repeat(1, 385px);
+    justify-content:center;
+}
+      .text-card a .post-title {
+    text-align:center;
+      text-wrap:pretty;
+      font-size: 20px;
+} 
+  
+.text-card .post-description {
+  text-align:center;
+      text-wrap:pretty;
+}
+    
+    .card .card-content .button-card .btn-card {
+    justify-content:center;
+      align-items:center;
+    }
+  }
+  
+  
+
+{% end_scope_css %}
+</style>
+{% end_require_css %}

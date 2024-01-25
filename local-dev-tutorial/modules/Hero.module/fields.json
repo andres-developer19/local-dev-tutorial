@@ -1,0 +1,139 @@
+[ {
+  "id" : "c37c1424-5920-3f72-483b-fa8838b0e2e1",
+  "name" : "column_left",
+  "display_width" : null,
+  "label" : "Column left",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7b3cf1a5-3a10-68fb-b60d-63c790878eda",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Choose Acme as your digital agency"
+  }, {
+    "id" : "c031af7a-8aa9-0b78-5f71-2eeb1dd0578e",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Lorem ipsum dolor sit amet, consectetur adipisci elit. Aenean at tortor feugiat, malesuada ex eu, porttitor tellus."
+  }, {
+    "id" : "947f026a-67d1-fdf9-7514-8a0859b9bd4e",
+    "name" : "first_button",
+    "display_width" : null,
+    "label" : "First Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "26678ab4-431f-d30c-34a6-230c63659d5c",
+      "name" : "text_button",
+      "display_width" : null,
+      "label" : "Text button",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Get started"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text_button" : "Get started"
+    }
+  }, {
+    "id" : "3e5941cc-1751-1e7f-dbdd-88218fa6a1bc",
+    "name" : "second_button",
+    "display_width" : null,
+    "label" : "Second button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "32649989-90a2-bab4-70d2-b536cf6f31d8",
+      "name" : "text_button",
+      "display_width" : null,
+      "label" : "Text button",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Secondary button"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text_button" : "Secondary button"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Choose Acme as your digital agency",
+    "description" : "Lorem ipsum dolor sit amet, consectetur adipisci elit. Aenean at tortor feugiat, malesuada ex eu, porttitor tellus.",
+    "first_button" : {
+      "text_button" : "Get started"
+    },
+    "second_button" : {
+      "text_button" : "Secondary button"
+    }
+  }
+}, {
+  "id" : "b6c84153-fa03-06ae-1c4c-a2c4cbbdac14",
+  "name" : "column_right",
+  "display_width" : null,
+  "label" : "Column right",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "77d419bc-87b7-32fb-45ae-145acc0cd2af",
+    "name" : "image_hero",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/image-hero.png",
+      "alt" : "image-hero",
+      "loading" : "lazy",
+      "width" : 720,
+      "height" : 568,
+      "max_width" : 720,
+      "max_height" : 568
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image_hero" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/image-hero.png",
+      "alt" : "image-hero",
+      "loading" : "lazy",
+      "width" : 720,
+      "height" : 568,
+      "max_width" : 720,
+      "max_height" : 568
+    }
+  }
+} ]

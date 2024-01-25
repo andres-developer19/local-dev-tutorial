@@ -1,0 +1,28 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+    
+    .paragraphBolster {
+      display: {{ module.styles.container.display }};
+      width: {{ module.styles.container.width ~ "%" }}; 
+      {{ module.styles.container.spacing.css }};
+      {{ module.styles.container.textalignment.css }}
+    }
+    
+.item-paragraph {
+      {{ module.styles.paragraph.font.css }};
+      {{ module.styles.paragraph.spacing.css }};
+      {{ module.styles.paragraph.alignment.css }};
+      {{ module.styles.paragraph.textalignment.css }};
+      {{ module.styles.paragraph.border.css }};
+      {% if module.styles.paragraph.line_height %}
+      line-height:{{ module.styles.paragraph.line_height ~ "px" }};
+      {% endif %}
+    }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %} 
+<div class="paragraphBolster">
+ <span class="item-paragraph" >{{ module.text }}</span> 
+</div>

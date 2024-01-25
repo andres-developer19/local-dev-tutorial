@@ -1,0 +1,72 @@
+{% require_css %}
+<style>
+	{% scope_css %}
+  
+  .accordion {
+    max-width: {{ module.styles.accordion_width.width ~ "px" }};
+}
+.accordion .contentBx {
+  position: {{ module.styles.accordion_item.position }};
+  {{ module.styles.accordion_item.spacing.css }};  
+}
+.accordion .contentBx .label {
+    position: {{ module.styles.accordion_question.position }};
+    {{ module.styles.accordion_question.spacing.css }};
+    background-color: rgba({{ module.styles.accordion_question.background_color.color|convert_rgb }}, {{ module.styles.accordion_question.background_color.opacity / 100 }});
+    {{ module.styles.accordion_question.font.css }};
+    line-height:{{ module.styles.accordion_question.line_height ~ "px" }};
+    cursor: pointer;
+    {{ module.styles.accordion_question.border.css }};
+    border-radius: {{ module.styles.accordion_question.radius ~ "px" }};
+}
+
+.accordion .contentBx .label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    width: 16px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accordion .contentBx.active .label::before {
+    content: "-";
+}
+
+.accordion .contentBx .content {
+    position: {{ module.styles.accordion_answer.position }};
+    background-color:rgba({{ module.styles.accordion_answer.background_color.color|convert_rgb }}, {{ module.styles.accordion_answer.background_color.opacity / 100 }});
+    {{ module.styles.accordion_answer.font.css }};
+    line-height: {{ module.styles.accordion_answer.line_height ~ "px" }};
+    height: 0;
+    overflow: hidden;
+    transition: 0.1s;
+    overflow-y: auto;    
+    {{ module.styles.accordion_answer.spacing.css }};
+}
+
+
+.accordion .contentBx.active .content {
+    height: auto;
+    padding:16px;
+}
+  
+	{% end_scope_css %}
+</style>
+{% end_require_css %}
+<div class="accordion">
+  {% for item in module.faqs %}
+{% set current =  loop.index %}
+  
+  <div class="contentBx {% if current == 1 %}active{% endif %}">
+    <div class="label">{{ item.question }}</div>
+    <div class="content">{{ item.answer }}</div>
+  </div>
+  
+  
+  {% endfor %}
+</div>

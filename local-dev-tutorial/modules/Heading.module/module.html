@@ -1,0 +1,91 @@
+{% if module.heading_tag == "h1" %}
+
+<h1 class="heading">
+  {{ module.heading }}
+</h1>
+
+{% elif module.heading_tag == "h2" %}
+<h2 class="heading">
+  {{ module.heading }}
+</h2>
+{% elif module.heading_tag == "h3" %}
+<h3 class="heading">
+  {{ module.heading }}
+</h3>
+{% elif module.heading_tag == "h4" %}
+<h4 class="heading">
+  {{ module.heading }}
+</h4>
+{% elif module.heading_tag == "h5" %}
+<h5 class="heading">
+  {{ module.heading }}
+</h5>
+{% elif module.heading_tag == "h6" %}
+<h6 class="heading">
+  {{ module.heading }}
+</h6>
+{% endif %}
+{% require_css %}
+<style>
+	{% scope_css %}
+  
+  
+  .heading {
+    {{ module.styles.heading.font.css }};
+    line-height: {{ module.styles.heading.line_height ~ "px" }};
+    {{ module.styles.heading.textalignment.text_align }};
+    {{ module.styles.heading.spacing.css }};
+      display:flex;
+  {% if module.styles.heading.alignment.horizontal_align %}
+   {% if module.styles.heading.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.heading.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.mobile.heading.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}  
+  
+   {% if module.styles.heading.alignment.vertical_align %}
+   {% if module.styles.heading.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.heading.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.heading.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+  }
+  
+  @media (max-width:1024px) {	
+  .heading {
+  {{ module.styles.mobile.heading.font.css }};
+  line-height: {{ module.styles.mobile.heading.line_height ~ "px" }};
+  {{ module.styles.mobile.heading.spacing.css }};
+  display:flex;
+  {% if module.styles.mobile.heading.alignment.horizontal_align %}
+   {% if module.styles.mobile.heading.alignment.horizontal_align == "LEFT" %}
+   justify-content: flex-start;
+   {% elif module.styles.mobile.heading.alignment.horizontal_align == "CENTER" %}
+   justify-content: center;
+   {% elif module.styles.mobile.heading.alignment.horizontal_align == "RIGHT" %}
+   justify-content: flex-end;
+   {% endif %}
+   {% endif %}  
+  
+   {% if module.styles.mobile.heading.alignment.vertical_align %}
+   {% if module.styles.mobile.heading.alignment.vertical_align == "BOTTOM" %}
+   align-items: flex-start;
+   {% elif module.styles.mobile.heading.alignment.vertical_align == "MIDDLE" %}
+   align-items: center;
+   {% elif module.styles.mobile.heading.alignment.vertical_align == "TOP" %}
+   align-items: flex-end;
+   {% endif %}
+   {% endif %}
+  }
+  }
+
+  
+	{% end_scope_css %}
+</style>
+{% end_require_css %}

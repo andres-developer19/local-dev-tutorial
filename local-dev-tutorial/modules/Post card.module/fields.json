@@ -1,0 +1,22 @@
+[ {
+  "id" : "37d6693e-dd23-8bf1-91a5-0e77aa613a42",
+  "name" : "featured_image",
+  "display_width" : null,
+  "label" : "Featured image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Rectangle%20111.png",
+    "alt" : "Rectangle 111",
+    "loading" : "lazy",
+    "width" : 407,
+    "height" : 244,
+    "max_width" : 407,
+    "max_height" : 244
+  }
+} ]

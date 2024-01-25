@@ -1,0 +1,119 @@
+[ {
+  "id" : "bb30e304-ee32-62a7-64e0-20725741fc0f",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b29b56ae-e70d-c73c-e7c9-9c8bd2017b7a",
+    "name" : "grid",
+    "display_width" : null,
+    "label" : "Grid",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "9de54cea-03fd-e9e1-550d-bbdae1de5acf",
+      "name" : "columns",
+      "display_width" : null,
+      "label" : "Columns",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 1,
+      "step" : 1,
+      "type" : "number",
+      "default" : 4
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "columns" : 4
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "grid" : {
+      "columns" : 4
+    }
+  }
+}, {
+  "id" : "a19d47dc-d69b-40f5-ecb5-aabd7c56155d",
+  "name" : "card",
+  "display_width" : null,
+  "label" : "card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "ec28d42c-2c6f-1dc9-b3b9-fc6f72b013c0",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Frame%20355.png",
+      "alt" : "Frame 355",
+      "loading" : "lazy",
+      "width" : 2439,
+      "height" : 3501,
+      "max_width" : 1393.3161953727506,
+      "max_height" : 2000
+    }
+  }, {
+    "id" : "8c0a8a18-4576-6bff-9fdb-948577a42953",
+    "name" : "name_",
+    "display_width" : null,
+    "label" : "Name ",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Esther Howard"
+  }, {
+    "id" : "70a9f37e-f5ba-7a1a-0250-6063c219fbb3",
+    "name" : "role",
+    "display_width" : null,
+    "label" : "Role",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "CEO"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Frame%20355.png",
+      "alt" : "Frame 355",
+      "loading" : "lazy",
+      "width" : 2439,
+      "height" : 3501,
+      "max_width" : 1393.3161953727506,
+      "max_height" : 2000
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  } ]
+} ]

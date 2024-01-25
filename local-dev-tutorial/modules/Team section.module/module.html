@@ -1,0 +1,50 @@
+<section class="team">
+  <div class="container">
+        <div class="heading-section"><!-- mx-auto max-w-2xl -->
+          <h2 class="title-section">{{ module.heading.title }}</h2><!-- text-3xl font-bold tracking-tight text-white sm:text-4xl -->
+          <p class="description-section">{{ module.heading.richtext_field }}</p><!--  -->
+        </div>
+        <article container-grid>
+            <ul role="list" class="custom-grid">
+{% for item in module.profile %}
+
+		
+                    <li class="card-item">
+                        {% if item.image_profile.src %}
+                      {% set sizeAttrs = 'width="{{ item.image_profile.width }}" height="{{ item.image_profile.height }}"' %}
+                      {% if item.image_profile.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.image_profile.width }}" height="{{ item.image_profile.height }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item.image_profile.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.image_profile.max_width }}" height="{{ item.image_profile.max_height }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                       {% set loadingAttr = item.image_profile.loading != 'disabled' ? 'loading="{{ item.image_profile.loading }}"' : '' %}
+                      <img class="img-profile" src="{{ item.image_profile.src }}" alt="{{ item.image_profile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                        <h3 class="name-profile">{{ item.name_profile }}</h3>
+                        <p class="role-profile">{{ item.role_profile }}</p>
+                        <ul role="list" class="red-social">
+                          	{% for item2 in item.social %}
+                          <li>
+                            <a href="{{ item2.url.href }}" class="social-icons">
+                              <span class="social-name">{{ item2.social_network }}</span>
+                              <span class="social-icon">
+                                		{% icon
+                                      name="{{ item2.social_icon.name }}"
+                                      style="{{ item2.social_icon.type }}"
+                                      unicode="{{ item2.social_icon.unicode }}"
+                                      icon_set="{{ item2.social_icon.icon_set }}"
+                                    %}             
+                              </span>
+                            </a>
+                          </li>
+                      {% endfor %}
+                        </ul>
+                      </li>
+              
+                      {% endfor %}
+                    
+    <!-- More people... -->
+            </ul>
+        </article>
+      </div>
+</section>

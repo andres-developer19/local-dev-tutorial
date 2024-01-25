@@ -1,0 +1,149 @@
+{% require_css %}
+<style>
+	{% scope_css %}
+  
+  .box-testimonial {
+    display: grid;
+    gap: 160px;
+  }
+
+  .box-img_profile {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    min-width: 158px;
+    height: auto;
+  }
+  
+  .img-porfile {
+    width: 158px;
+height: 156.205px;
+  }
+
+  .content-testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1.25rem;
+    gap: 40px;
+  }
+
+  .testimonial p {
+{{ module.styles.testimonial.font.css }};
+line-height: {{ module.styles.testimonial.line_height ~ "px" }};
+  }
+blockquote {
+  border:none;
+  padding:0;
+}
+
+  .text-testimonial {
+    {{ module.styles.testimonial_box.spacing_field.css }};
+    display: {{ module.styles.testimonial_box.display }};
+    flex-direction: {{ module.styles.testimonial_box.flex_direction }};
+  }
+
+.rating-stars {
+ display: flex;
+ gap: 8px;
+}
+  
+  .text-testimonial .img-divider {
+   width:100%; 
+  }
+
+@media (max-width: 767px) {
+    .box-testimonial {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 42rem;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .box-testimonial {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+	{% end_scope_css %}
+</style>
+{% end_require_css %}
+<div class="content-section_five">
+<div class="mx-auto max-w-7xl">
+  <div class="box-testimonial">
+      {% for item in module.testimonial %}
+    <div class="testimonials">
+      <figcaption class="box-img_profile">        
+        {% if item.image_profile.src %}
+          {% set sizeAttrs = 'width="{{ item.image_profile.width }}" height="{{ item.image_profile.height }}"' %}
+          {% if item.image_profile.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image_profile.width }}" height="{{ item.image_profile.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.image_profile.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image_profile.max_width }}" height="{{ item.image_profile.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = item.image_profile.loading != 'disabled' ? 'loading="{{ item.image_profile.loading }}"' : '' %}
+          <img src="{{ item.image_profile.src }}" alt="{{ item.image_profile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </figcaption>
+      <div class="content-testimonial">
+        <div class="rating-stars">
+          
+        {% set starLength = item.rating_stars.number_stars %}
+                  {% for x in range(0, starLength) %}
+          
+                  {% if item.rating_stars.star.src %}
+                  {% set sizeAttrs = 'width="{{ item.rating_stars.star.width }}" height="{{ item.rating_stars.star.height }}"' %}
+                  {% if item.rating_stars.star.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.rating_stars.star.width }}" height="{{ item.rating_stars.star.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.rating_stars.star.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.rating_stars.star.max_width }}" height="{{ item.rating_stars.star.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.rating_stars.star.loading != 'disabled' ? 'loading="{{ item.rating_stars.star.loading }}"' : '' %}
+                  <img src="{{ item.rating_stars.star.src }}" alt="{{ item.rating_stars.star.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+          
+                  {% endfor %}
+          
+        </div>
+      <figure class="text-testimonial">
+        <blockquote class="testimonial">
+          <p>{{ item.testimonial }}</p>
+        </blockquote>
+        
+        {% if item.divider_content.divider == true %}
+        
+        	{% if item.divider_content.divider_image.src %}
+          {% set sizeAttrs = 'width="{{ item.divider_content.divider_image.width }}" height="{{ item.divider_content.divider_image.height }}"' %}
+          {% if item.divider_content.divider_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.divider_content.divider_image.width }}" height="{{ item.divider_content.divider_image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.divider_content.divider_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.divider_content.divider_image.max_width }}" height="{{ item.divider_content.divider_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = item.divider_content.divider_image.loading != 'disabled' ? 'loading="{{ item.divider_content.divider_image.loading }}"' : '' %}
+          <img class="img-divider" src="{{ item.divider_content.divider_image.src }}" alt="{{ item.divider_content.divider_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        
+        {% endif %}
+        
+      </figure>
+    </div>
+      
+      
+    </div>
+    
+    {% endfor %}
+  </div>
+</div>
+
+</div>

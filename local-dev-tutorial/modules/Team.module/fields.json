@@ -1,0 +1,168 @@
+[ {
+  "id" : "8f22ce80-86ba-0975-8536-206d11b8427e",
+  "name" : "team_members",
+  "display_width" : null,
+  "label" : "Team members",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 8
+  },
+  "children" : [ {
+    "id" : "17cc801d-543e-b47c-32d6-4d2c400807e8",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    }
+  }, {
+    "id" : "c1440704-2f54-8a2a-e5fd-eea0298c6055",
+    "name" : "name_",
+    "display_width" : null,
+    "label" : "Name ",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Esther Howard"
+  }, {
+    "id" : "0bad41be-568d-9f2e-27eb-34a946a879b0",
+    "name" : "role",
+    "display_width" : null,
+    "label" : "Role",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "CEO"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "name_" : "Esther Howard",
+    "role" : "CEO"
+  } ]
+} ]

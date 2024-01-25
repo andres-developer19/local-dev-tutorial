@@ -1,0 +1,120 @@
+  <div class="swiper mySwiper testimonial-container">
+    <div class="swiper-wrapper"{# style="
+    background-image: url('{{ module.background_image.src }}');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;"#}>
+      {% for item in module.testimonials %}
+      <div class="swiper-slide">
+        <div class="box-testimonial" >
+          {#
+          <div class="quotes quote-top-corner">
+            <img src="{{ item.background.quotes_open.src }}" alt="{{ item.background.quotes_open.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          </div> #}
+          <div class="testimonial">
+        <div class="stars">
+          {% set starsLength =  item.star_rating.stars_number  %}
+          {% for x in range(0, starsLength) %}
+              <img src="{{ item.star_rating.star_image.src }}" alt="{{ item.star_rating.star_image.alt }}" width="{{ item.star_rating.star_image.width }}" height="{{ item.star_rating.star_image.height }}" >
+          {% endfor %}
+        </div>
+        <div class="testimonial-text">
+            {{ item.testimonial }}
+        </div>
+        <div class="name-testimonial">{{ item.witness_name }}</div>
+        <div class="role-testimonial">{{ item.witness_role }}</div>
+    </div>
+          {#
+        <div class="quotes quote-bottom-corner">
+          <img src="{{ item.background.quotes_close.src }}" alt="{{ item.background.quotes_close.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        </div>
+        #}
+        </div>
+      </div> 
+      {% endfor %}
+
+    </div>
+    <div class="swiper-button-next">
+    {% icon
+      name="{{ module.arrow_right.name }}"
+      style="{{ module.arrow_right.type }}"
+      unicode="{{ module.arrow_right.unicode }}"
+      icon_set="{{ module.arrow_right.icon_set }}"
+    %}
+    </div>
+    <div class="swiper-button-prev">
+    {% icon
+      name="{{ module.arrow_left.name }}"
+      style="{{ module.arrow_left.type }}"
+      unicode="{{ module.arrow_left.unicode }}"
+      icon_set="{{ module.arrow_left.icon_set }}"
+    %}
+    </div>
+  </div>
+
+
+
+{% require_css %}
+<style>
+  {% scope_css %}
+.box-testimonial {
+  
+width:{{ module.styles.width ~ '%' }};
+  }
+.stars {
+    {% if module.styles.star.alignment.horizontal_align %}
+    {% if module.styles.star.alignment.horizontal_align == "LEFT" %}
+    justify-content: flex-start;
+    {% elif module.styles.star.alignment.horizontal_align == "CENTER" %}
+    justify-content: center;
+    {% elif module.styles.star.alignment.horizontal_align == "RIGHT" %}
+    justify-content: flex-end;
+    {% endif %}
+    {% endif %}
+}
+.testimonial-text {
+  {{ module.styles.testimonial.font.css }};
+  line-height: {{ module.styles.testimonial.line_height ~ 'px' }};  
+  {{ module.styles.testimonial.spacing.css }};
+  {{ module.styles.testimonial.textalignment.css }}
+}
+.name-testimonial {
+  {{ module.styles.witness_name.font.css }};
+  line-height: {{ module.styles.witness_name.line_height ~ 'px' }};
+  {{ module.styles.witness_name.textalignment.css }};
+} 
+  
+  
+.swiper-button-next {
+  top:35px;
+  left:auto;
+  right:10px;
+  fill: #ED2D40;
+  width:24px;
+  height:24px;
+}
+.swiper-button-next::after {
+  content:'';
+  background-image: {{ module.arrow_right.src }};
+}
+.swiper-button-prev {
+  top:35px;
+  left:auto;
+  right:50px;
+  fill: #ED2D40;
+  width:24px;
+  height:24px;
+}
+.swiper-button-prev::after {
+  content:'';
+  background-image: {{ module.arrow_left.src }};
+}
+  
+  @media (max-width:768px) {
+  .box-testimonial {  
+width:{{ module.styles.mobile.width ~ '%' }};
+  }
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

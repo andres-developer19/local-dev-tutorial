@@ -1,0 +1,124 @@
+<section class="services">
+    <div class="container">
+              <div class="heading-section">
+                <h2 class="title">{{ module.heading.title }}</h2>
+                <p class="description">{{ module.heading.description }}</p>
+              </div>
+      
+                <dl class="services-grid">                  
+                  {% for item in module.card %}
+                  <div class="card-services">
+                    <dt class="heading-card">
+                      <div class="icon-content">
+                      
+                      {% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}" icon_set="{{ item.icon.icon_set }}" %}
+                      
+                      </div>
+                      {{ item.title }}
+                    </dt>
+                    <dd class="description-services">{{ item.body_card }}</dd>
+                  </div>
+                  {% endfor %}
+                </dl>
+    </div>
+</section>
+{% require_css %}
+<style>
+  {% scope_css %}
+.services {
+    background-color: #fafafa;
+    padding: 100px 50px;
+}
+
+.services .heading-section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.services .heading-section .title {
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111827;
+}
+
+.services .heading-section .description {
+    margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #414141;
+}
+
+.services .services-grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px 32px;
+}
+
+@media (min-width: 1024px) {
+    .services .services-grid {
+        max-width: none;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 2rem;
+    }
+}
+
+.services .services-grid .card-services {
+    position: relative;
+    padding-right: 64px;
+    padding-left: 64px;
+}
+
+.services .services-grid .card-services .heading-card {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #111827;
+}
+
+.services .services-grid .card-services .heading-card .icon-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+    background-color: #6D28D9;
+}
+
+.services .services-grid .card-services .heading-card .icon-content span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services .services-grid .card-services .heading-card .icon-content svg {
+    height: 24px;
+    width: 24px;
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+.services .services-grid .card-services .description-services {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #414141;
+    font-family: Inter;
+    font-weight: 500;
+}
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

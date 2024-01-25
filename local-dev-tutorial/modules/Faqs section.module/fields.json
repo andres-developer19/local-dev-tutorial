@@ -1,0 +1,91 @@
+[ {
+  "id" : "00deb7d8-dfb7-d327-963d-de6bc87c8118",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "841c92aa-05ce-092c-5ce2-d4a3bcc93b9b",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Frequently asked questions"
+  }, {
+    "id" : "a52cb1ee-7ca4-0827-3707-1c1615d68f44",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Can’t find the answer you’re looking for? Reach out to our customer support team."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Frequently asked questions",
+    "description" : "Can’t find the answer you’re looking for? Reach out to our customer support team."
+  }
+}, {
+  "id" : "44f597d9-851b-5c24-d6d3-4f4f621b2ebe",
+  "name" : "faqs",
+  "display_width" : null,
+  "label" : "Faqs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "345a1a48-1422-9ea8-46c4-7aa6f243d8c8",
+    "name" : "question",
+    "display_width" : null,
+    "label" : "Question",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "How do you make holy water?"
+  }, {
+    "id" : "c7187580-8ca7-05d9-a1be-fbac9fba77c8",
+    "name" : "answer",
+    "display_width" : null,
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "question" : "How do you make holy water?",
+    "answer" : "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat."
+  }, {
+    "question" : "How do you make holy water?",
+    "answer" : "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat."
+  }, {
+    "question" : "How do you make holy water?",
+    "answer" : "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat."
+  }, {
+    "question" : "How do you make holy water?",
+    "answer" : "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat."
+  } ]
+} ]

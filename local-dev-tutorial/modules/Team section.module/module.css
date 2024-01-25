@@ -1,0 +1,155 @@
+.team {
+    background-color: #08101d;
+    padding: 100px 50px;
+}
+
+.team .heading-section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.team .heading-section .title-section {
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+}
+
+.team .heading-section .description-section {
+    margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fafafa;
+}
+
+.team .container-grid {
+    display: grid;
+    gap: 40px;
+}
+
+.team .custom-grid {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.team .custom-grid .card-item {
+    border-radius: 32px;
+    background-color: #2d3748;
+    padding: 32px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+}
+
+.team .custom-grid .card-item .name-profile {
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    line-height: 27px;
+    letter-spacing: -0.025em;
+    color: #fff;
+}
+
+.team .custom-grid .card-item .role-profile {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    line-height: 24px;
+    color: #718096;
+}
+
+.team .custom-grid .card-item .img-profile {
+    margin-left: auto;
+    margin-right: auto;
+    height: 192px;
+    width: 192px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+    .team .custom-grid .card-item .img-profile {
+        height: 224px;
+        width: 224px;
+    }
+}
+
+.team .custom-grid .card-item .red-social {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.team .custom-grid .card-item .red-social li {
+    list-style: none;
+}
+
+.team .custom-grid .card-item .red-social li .social-icons {
+    color: #CBD5E0;
+}
+
+.team .custom-grid .card-item .red-social li .social-icons:hover {
+    color: #718096;
+}
+
+.team .custom-grid .card-item .red-social li .social-icons .social-name {
+    color: #fff;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.team .custom-grid .card-item .red-social li .social-icons .social-icon {
+    height: 20px;
+    width: 20px;
+    color:#fafafa;
+}
+
+.team .custom-grid .card-item .red-social li .social-icons .social-icon svg {
+    height: 20px;
+    width: 20px;
+    fill:#CBD5E0;
+}
+.team .custom-grid .card-item .red-social li .social-icons .social-icon svg:hover {
+    fill: #718096;
+}
+
+@media (min-width: 640px) {
+    .team .custom-grid {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .team .custom-grid {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+}

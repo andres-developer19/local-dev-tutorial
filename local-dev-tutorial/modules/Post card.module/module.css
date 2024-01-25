@@ -1,0 +1,49 @@
+.container-post {
+    width: 100%;
+}
+.post-card {
+    width: 407px;
+}
+.featured-image {
+    width: 407px;
+    height: 244px;
+    border-radius: 4px;
+}
+.content-post_text {
+    padding:30px 0;
+}
+.content-post_text time {
+    color: #838383;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.content-post_text h2 {
+    color: #252525;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 132%;
+    margin:0;
+}
+.content-post_text p {
+    color: #414141;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    margin:0;
+}
+.content-post_button .link {
+    color: #0D2689;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration:none;
+}

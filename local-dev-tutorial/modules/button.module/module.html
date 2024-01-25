@@ -1,0 +1,121 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+
+      {# Button wrapper #}
+
+      {% if module.styles.alignment.alignment %}
+        .button-wrapper {
+          display:flex;
+       {% if module.styles.alignment.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.alignment.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.alignment.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+        }
+      {% endif %}
+
+      {# Button #}
+
+      .button {
+        {% if module.show_icon == true %}
+        display: {{ module.styles.display }};
+        gap: {{ module.styles.gap ~ "px" }};
+        {% endif %}
+        {% if module.styles.background.color.color %}
+          background-color: rgba({{ module.styles.background.color.color|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% endif %}
+        {{ module.styles.border.border.css }};
+        {% if module.styles.corner.radius >= 0 %}
+          border-radius: {{ module.styles.corner.radius ~ "px" }};
+        {% endif %}
+        text-decoration: none;
+        {{ module.styles.text.font.css }};
+        {{ module.styles.spacing.spacing.css }};
+        {{ module.styles.border.border.css }};
+      }
+
+      .button:hover,
+      .button:focus {
+        {% if module.styles.background.color.color %}
+          background-color: rgba({{ color_variant(module.styles.background.color.color, -30)|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% endif %}
+      }
+
+      .button:active {
+        {% if module.styles.background.color %}
+          background-color: rgba({{ color_variant(module.styles.background.color.color, 80)|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+        {% endif %}
+      }
+
+      .button-wrapper .button .btn-icon svg {
+        width: {{ module.styles.icon.width ~ "px" }};
+        height:{{ module.styles.icon.height ~ "px" }};
+        color:{{ module.styles.text.font.color }};
+        fill:{{ module.styles.text.font.color }};
+      }
+    .button-wrapper .button:hover .btn-icon svg {
+        color:rgba({{ color_variant(module.styles.text.font.color, -30) | convert_rgb }});
+        fill:rgba({{ color_variant(module.styles.text.font.color, -30) | convert_rgb }});
+      }
+    
+    button-wrapper .button:hover  {
+        color:rgba({{ color_variant(module.styles.text.font.color, -30) | convert_rgb }});
+        fill:rgba({{ color_variant(module.styles.text.font.color, -30) | convert_rgb }});
+    }
+
+    @media (max-width:1024px) {
+        .button-wrapper {
+          display:flex;
+       {% if module.styles.mobile.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.mobile.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.mobile.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+          {{ module.styles.mobile.spacing.css }};
+      }
+    }
+
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+{# Sets attributes used for the link field #}
+
+{% set href = module.link.url.href %}
+{% if module.link.url.type == "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if module.link.no_follow %}
+  {% do rel.append("nofollow") %}
+{% endif %}
+{% if module.link.open_in_new_tab %}
+  {% do rel.append("noopener") %}
+{% endif %}
+
+{# Button #}
+
+<div class="button-wrapper">
+  
+  <a class="button" href="{{ href }}"
+  {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+  {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+  >
+    {{ module.button_text }}
+    {% if module.show_icon == true %}
+    <span class="btn-icon">
+    {% icon
+      name="{{ module.icon.name }}"
+      style="{{ module.icon.type }}"
+      unicode="{{ module.icon.unicode }}"
+      icon_set="{{ module.icon.icon_set }}"
+    %}
+    </span>
+    {% endif %}
+  </a>
+</div>

@@ -1,0 +1,95 @@
+<div class="listHeadingBox">
+
+{% for item in module.list %}
+{% set currentIndex = loop.index %}
+
+{% if item.heading_tag == "h1" %}
+<h1 class="headingStyle headingPadding" >
+	    {% for item2 in item.heading %}
+    {% inline_text field="heading" value="{{ item2 }}" %}
+{% endfor %}
+</h1>
+{% elif item.heading_tag == "h2" %}
+
+<h2 class="headingStyle headingH{{ currentIndex + 1 }} headingPadding" >
+    {% for item2 in item.heading %}
+    {% inline_text field="heading" value="{{ item2 }}" %}
+{% endfor %}
+</h2>
+{% elif item.heading_tag == "h3" %}
+<h3 class="headingStyle headingH{{ currentIndex + 1 }} headingPadding" >
+  {% for item2 in item.heading %}
+  {% inline_text field="heading" value="{{ item2 }}" %}
+{% endfor %}
+  </h3>
+{% elif item.heading_tag == "h4" %}
+<h4 class="headingStyle headingH4 headingPadding" >
+      {% for item2 in item.heading %}
+    {% inline_text field="heading" value="{{ item2 }}" %}
+{% endfor %}
+</h4>
+{% elif item.heading_tag == "h5" %}
+<h5 class="headingStyle headingH5 headingPadding headingPadding" >
+      {% for item2 in item.heading %}
+    {% inline_text field="heading" value="{{ item2 }}" %}
+{% endfor %}
+</h5>
+{% elif item.heading_tag == "h6" %}
+<h6 class="headingStyle headingH6 headingPadding" >
+      {% for item2 in item.heading %}
+    {% inline_text field="heading" value="{{ item2 }}" %}
+{% endfor %}
+</h6>
+{% endif %}
+  
+{% endfor %}  
+</div>
+{% require_css %}
+<style>
+	{% scope_css %}
+  
+  .listHeadingBox {
+  display:{{ module.styles.container.display }};
+  flex-direction:{{ module.styles.container.flex_direction }};
+  gap:{{ module.styles.container.gap ~ "px" }};
+  {% if module.styles.container.alignment.horizontal_align %}
+  {% if module.styles.container.alignment.horizontal_align == "LEFT" %}
+    justify-content: flex-start;
+  {% elif module.styles.container.alignment.horizontal_align == "CENTER" %}
+    justify-content: center;
+  {% elif module.styles.container.alignment.horizontal_align == "RIGHT" %}
+    justify-content: flex-end;
+  {% endif %}
+  {% endif %}   
+  {% if module.styles.container.alignment.vertical_align %}
+  {% if module.styles.container.alignment.vertical_align == "LEFT" %}
+    align-items: flex-start;
+  {% elif module.styles.container.alignment.vertical_align == "CENTER" %}
+    align-items: center;
+  {% elif module.styles.container.alignment.vertical_align == "RIGHT" %}
+    align-items: flex-end;
+  {% endif %}
+  {% endif %}      
+  {% if module.styles.container.height %}
+  min-height:{{ module.styles.container.height ~ "px" }};
+  {% endif %}
+  }
+  
+  .headingStyle {
+    {{ module.styles.heading.font.css }};
+    line-height:{{ module.styles.heading.line_height ~ "px" }};
+    {{ module.styles.heading.spacing.css }};
+    {{ module.styles.heading.textalignment.text_align }};
+    {{ module.styles.heading.backgroundimage.css }};
+    background-repeat: no-repeat;
+    background-size: auto!important;
+    min-height:48px;
+  }
+  
+  .spacingHeadingSecond {
+  padding-left: 80px;
+  }
+  
+	{% end_scope_css %}
+</style>
+{% end_require_css %}

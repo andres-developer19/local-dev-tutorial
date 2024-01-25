@@ -1,0 +1,52 @@
+[ {
+  "id" : "457ba0dc-75ef-112b-972b-7e5139068ab9",
+  "name" : "faqs",
+  "display_width" : null,
+  "label" : "Faqs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "a4183766-5d7a-561a-2759-432778977e32",
+    "name" : "answer",
+    "display_width" : null,
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Our data-driven approach, passion for results, and personalized strategies ensure we deliver measurable growth for your business."
+  }, {
+    "id" : "a7893d8c-3296-53d0-9508-7fd11e4bffe9",
+    "name" : "question",
+    "display_width" : null,
+    "label" : "Question",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "What sets your agency apart from others?"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "answer" : "Our data-driven approach, passion for results, and personalized strategies ensure we deliver measurable growth for your business.",
+    "question" : "What sets your agency apart from others?"
+  }, {
+    "answer" : "Our data-driven approach, passion for results, and personalized strategies ensure we deliver measurable growth for your business.",
+    "question" : "What sets your agency apart from others?"
+  }, {
+    "answer" : "Our data-driven approach, passion for results, and personalized strategies ensure we deliver measurable growth for your business.",
+    "question" : "What sets your agency apart from others?"
+  }, {
+    "answer" : "Our data-driven approach, passion for results, and personalized strategies ensure we deliver measurable growth for your business.",
+    "question" : "What sets your agency apart from others?"
+  } ]
+} ]

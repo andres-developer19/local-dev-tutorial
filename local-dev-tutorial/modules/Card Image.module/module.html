@@ -1,0 +1,151 @@
+<div class="card-image_grid">
+  {% for item in module.card %}
+	<div class="card">
+    <div class="card-image">
+       {% if item.image.src %}
+      {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+      {% if item.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif item.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+      <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    </div>
+    <div class="card-content">
+        <div class="tag-card">
+            <span>{{ item.tag }}</span>
+          
+        </div>
+        <div class="text-card">
+            <h3>{{ item.title }}</h3>
+          
+            <p>{{ item.description }}</p>
+        </div>
+        <div class="button-card">
+            <a href="{{ item.button.url.href }}" class="btn-card">{{ item.button.text_button }}</a>
+        </div>
+    </div>
+</div>
+  {% endfor %}
+</div>
+
+{% require_css %}
+<style>
+{% scope_css %}
+
+  .card {
+    flex-direction: {{ module.styles.card.flex_direction }};
+    align-items: {% if  module.styles.card.alignment.vertical_align == "TOP" %}flex-start{% elif  module.styles.card.alignment.vertical_align == "MIDDLE" %}center{% else %}flex-end{% endif %};
+    justify-content: {% if  module.styles.card.alignment.horizontal_align == "LEFT" %}flex-start{% elif  module.styles.card.alignment.horizontal_align == "CENTER" %}center{% else %}flex-end{% endif %};
+    border-radius: {{ module.styles.card.radius ~ "px"}};
+}
+  
+  
+  .card .card-content {
+    {{ module.styles.card_content.spacing.css }};
+    flex-direction: {{ module.styles.card_content.flex_direction }};
+    align-items: {% if  module.styles.card_content.alignment.vertical_align == "TOP" %}flex-start{% elif  module.styles.card_content.alignment.vertical_align == "MIDDLE" %}center{% else %}flex-end{% endif %};
+    justify-content: {% if  module.styles.card_content.alignment.horizontal_align == "LEFT" %}flex-start{% elif  module.styles.card_content.alignment.horizontal_align == "CENTER" %}center{% else %}flex-end{% endif %};
+    border-radius: {{ module.styles.card_content.radius.border_top_left_radius ~ 'px' }} {{ module.styles.card_content.radius.border_top_right_radius ~ 'px' }} {{ module.styles.card_content.radius.border_bottom_right_radius ~ 'px' }} {{ module.styles.card_content.radius.border_bottom_left_radius ~ 'px' }};
+    
+    background-color: rgba({{ module.styles.card_content.background.color|convert_rgb }}, {{ module.styles.card_content.background.opacity / 100 }});
+}
+.card .card-content .tag-card span {
+  {{ module.styles.tag.font.css }};
+  line-height:{{ module.styles.tag.line_height ~ "px" }};
+  }
+  .card .card-content .text-card h3 {
+    {{ module.styles.title.font.css }};
+    line-height:{{ module.styles.title.line_height ~ "px" }};
+} 
+  
+.card .card-content .text-card p {
+  {{ module.styles.description.font.css }};
+  {{ module.styles.description.line_height ~ "px" }};
+} 
+  
+  .card .card-content .button-card .btn-card {
+  {{ module.styles.button.spacing.css }};
+    border-radius: {{ module.styles.button.radius ~ "px" }};
+    {{ module.styles.button.border.css }};
+    {{ module.styles.button.font.css }};
+    line-height:{{ module.styles.button.line_height ~ "px" }};
+  }
+  
+  .card .card-content {
+    display: flex;
+    width: 383px;
+}
+.card-image_grid {
+  display: grid;
+  grid-template-columns: repeat({% if module.styles.grid.columns %}{{ module.styles.grid.columns }}{% endif %}, 385px);
+  gap: 36px;
+}
+  
+.card {
+    display: inline-flex;
+    flex-direction: {{ module.styles.card.flex_direction }};
+    align-items: flex-start;
+    width: 383px;
+    min-height: 516px;  
+    border-radius: {{ module.styles.card.radius ~ "px"}};
+}
+  
+.card .card-image {
+    width: 383px;
+    height: 238px;
+    border-radius: 16px 16px 0px 0px;
+}
+.card .card-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+}
+.card .card-content {
+display: flex;
+}
+.card .card-content .tag-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.card .card-content .tag-card span {
+    margin-bottom: 4px;
+}
+.card .card-content .text-card h3 {
+    margin-bottom: 4px;
+}    
+.card .card-content .text-card p {
+    margin-bottom: 32px;
+} 
+.card .card-content .button-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .card-content .button-card .btn-card {
+    display: flex;
+    width: 100%;
+    height: 52px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+  
+  @media (max-width:768px) {
+  .card-image_grid {
+    display: grid;
+    grid-template-columns: repeat(1, 385px);
+    gap: 36px;
+}
+  }
+  
+{% end_scope_css %}
+</style>
+{% end_require_css %}

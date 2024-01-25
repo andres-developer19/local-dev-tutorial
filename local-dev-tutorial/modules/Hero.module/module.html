@@ -1,0 +1,20 @@
+  <section class="relative bg-white hero-2">
+    <div class="column-1">
+      <div class="main-heading">
+        <h1 class="title">{{ module.column_left.title }}</h1>
+        <p class="description">{{ module.column_left.description }}</p>
+        <div class="buttons">
+          <a href="#" class="btn button-left">{{ module.column_left.first_button.text_button }}</a>
+          <a href="#" class="btn button-right">{{ module.column_left.second_button.text_button }} </a>
+        </div>
+      </div>
+    </div>
+    <div class="img-hero column-2">
+    </div>
+  </section>
+
+<style>
+.column-2 {
+  background-image: url({{ module.column_right.image_hero.src }});
+  }
+</style>

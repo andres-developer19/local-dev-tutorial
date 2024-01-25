@@ -1,0 +1,122 @@
+[ {
+  "id" : "aa7f5082-6be1-b430-2d04-d99038304b54",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "eeb2fcdd-b08d-c114-9eae-6eaa26475937",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Deploy faster"
+  }, {
+    "id" : "ec1c7c06-1493-7b18-1fc8-dbc2c9f76bd4",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Deploy faster",
+    "description" : "Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc."
+  }
+}, {
+  "id" : "0234fe4e-93a2-5652-4d12-6833f3f27201",
+  "name" : "card",
+  "display_width" : null,
+  "label" : "Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "8771f7f8-ecab-b44b-e832-a506c77c0e8d",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "default" : {
+      "name" : "cloud-download-alt",
+      "unicode" : "f381",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "66ca859f-449f-44f7-eae4-d0e5ad29eaf8",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Push to deploy"
+  }, {
+    "id" : "015691a7-0020-3a70-4166-7d3ba46eabdd",
+    "name" : "body_card",
+    "display_width" : null,
+    "label" : "Body",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "icon" : {
+      "name" : "cloud-download-alt",
+      "unicode" : "f381",
+      "type" : "SOLID"
+    },
+    "title" : "Push to deploy",
+    "body_card" : "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa."
+  }, {
+    "icon" : {
+      "name" : "cloud-download-alt",
+      "unicode" : "f381",
+      "type" : "SOLID"
+    },
+    "title" : "Push to deploy",
+    "body_card" : "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa."
+  }, {
+    "icon" : {
+      "name" : "cloud-download-alt",
+      "unicode" : "f381",
+      "type" : "SOLID"
+    },
+    "title" : "Push to deploy",
+    "body_card" : "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa."
+  }, {
+    "icon" : {
+      "name" : "cloud-download-alt",
+      "unicode" : "f381",
+      "type" : "SOLID"
+    },
+    "title" : "Push to deploy",
+    "body_card" : "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa."
+  } ]
+} ]

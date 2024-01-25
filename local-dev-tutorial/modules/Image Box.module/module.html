@@ -1,0 +1,70 @@
+<div class="container-section">
+  <div class="box-image">
+    {% set href = module.link.url.href %}
+{% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+	{% set href = "mailto:" + href %}
+{% endif %}
+   <a href="{{ href }}"
+	 {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+	 {% if module.link.rel %}rel="{{ module.link.rel }}"{% endif %}
+	 >
+  {% if module.image.src %}
+	{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+	{% if module.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+	 <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }} width="{{ module.image.width }}" height="{{ module.image.height }} {{ sizeAttrs }}">
+     
+{% endif %}
+   </a>
+</div>
+</div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+    .box-image {
+      display:flex;
+      {% if module.styles.alignment.alignment.horizontal_align %}
+      {% if module.styles.alignment.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.alignment.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.alignment.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %} {# LEFT / CENTER / RIGHT #}
+      align-items:{{ module.styles.alignment.alignment.vertical_align }}; {# MIDDLE / BOTTOM / TOP #}
+    }
+    .box-image img {
+      object-fit:cover;
+      {% if module.styles.box_shadow %}
+      box-shadow: {{ module.styles.horizontal ~ 'px' }} {{ module.styles.vertical ~ 'px' }} {{ module.styles.blur ~ 'px' }} {{ module.styles.spread ~ 'px' }} rgba({{ module.styles.color.color|convert_rgb }}, {{ module.styles.color.opacity / 100 }});
+      {% endif %}
+      {{ module.styles.spacing.css }};
+      overflow-x: hidden;
+      }
+    
+    @media (max-width: 1024px) {
+    .box-image img {
+      {{ module.styles.mobile.spacing.css }};
+      }
+       .box-image {
+      display:flex;
+      {% if module.styles.mobile.alignment.horizontal_align %}
+      {% if module.styles.mobile.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.mobile.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.mobile.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %} {# LEFT / CENTER / RIGHT #}
+      align-items:{{ module.styles.mobile.alignment.vertical_align }}; {# MIDDLE / BOTTOM / TOP #}
+    }
+    }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}  

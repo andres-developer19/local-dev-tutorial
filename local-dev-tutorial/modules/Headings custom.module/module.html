@@ -1,0 +1,171 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+  .label-section {
+    {{ module.styles.heading.font.css }};
+    {{ module.styles.heading.spacing.css }};
+    {% if module.styles.heading.textalignment %}
+    text-align: {{ module.styles.heading.textalignment.text_align }};
+    {% endif %}
+    line-height: {{ module.styles.heading.line_height ~ 'px' }};
+    {% if module.styles.heading.background_color %}
+    background-color: rgba({{ module.styles.heading.background_color.color|convert_rgb }}, {{ module.styles.heading.background_color.opacity / 100 }});
+    {% endif %}
+    display: {{ module.styles.heading.display }};
+    }
+  .title-section {
+    {{ module.styles.title.font.css }};
+    {{ module.styles.title.spacing.css }};
+    {% if module.styles.title.textalignment %}
+    text-align: {{ module.styles.title.textalignment.text_align }};
+    {% endif %}
+    line-height: {{ module.styles.title.line_height ~ 'px' }};
+    {% if module.styles.heading.background_color %}
+    background-color: rgba({{ module.styles.title.background_color.color|convert_rgb }}, {{ module.styles.title.background_color.opacity / 100 }});
+    {% endif %}
+    display:{{ module.styles.title.display }};
+    }
+    .description-section { 
+    {{ module.styles.description.font.css }};
+    line-height: {{ module.styles.description.line_height ~ 'px' }};
+    text-align: {{ module.styles.description.textalignment.text_align }};                                              
+    {{ module.styles.description.spacing.css }};
+      {% if module.styles.description.width %}
+      max-width: {{ module.styles.description.width ~ "px" }};
+      width:100%;
+      {% endif %}
+    }
+    
+    .box-headings {
+    {% if module.styles.header_container.width %}
+    max-width: {{ module.styles.header_container.width ~ "px" }};
+      width:100%;
+      {% endif %}
+    {{ module.styles.header_container.backgroundimage.css }};
+    {{ module.styles.header_container.spacing.css }};
+    }
+      {#  
+    {% if module.styles.container_width.width == '%' %}
+    .box-headings {
+      {% if module.styles.container_width.percent %}
+      width:{{ module.styles.container_width.percent ~ '%' }};
+      {% endif %}
+      }
+      {% elif module.styles.container_width.width == 'vw' %}
+    .box-headings {
+      {% if module.styles.container_width.vw %}
+      width:{{ module.styles.container_width.vw ~ 'vw' }};
+      {% endif %}
+      }
+      {% else %}
+          {% if module.styles.container_width.px %}
+    .box-headings {
+      width:{{ module.styles.container_width.px ~ 'px' }};
+      }
+      {% endif %}
+    {% endif %}
+      .box-headings {
+      {{ module.styles.container_width.spacing.css }};
+    } #}
+      .content-box-headings {
+      display:flex;
+      {% if module.styles.header_container.alignment.horizontal_align %}
+      {% if module.styles.header_container.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.header_container.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.header_container.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %}
+    }  
+    {#
+    @media screen and (min-width:1024px) {
+      .label-section {
+      margin-left:-36px;
+      }
+    } #}
+    
+        @media (max-width:1023px) {
+          .content-box-headings {
+      display:flex;
+      {% if module.styles.mobile.header_container.alignment.horizontal_align %}
+      {% if module.styles.mobile.header_container.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.mobile.header_container.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.mobile.header_container.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %}
+    }
+          
+      .label-section {
+      text-align:{{ module.styles.mobile.heading.textalignment.text_align }}; 
+      {{ module.styles.mobile.heading.font.css }};
+      line-height: {{ module.styles.mobile.heading.line_height ~ 'px' }};
+      }
+      .title-section { 
+      text-align:{{ module.styles.mobile.title.textalignment.text_align }};
+      {{ module.styles.mobile.title.font.css }};
+      line-height: {{ module.styles.mobile.title.line_height ~ 'px' }};
+      {% if module.styles.mobile.title.display %}
+      display: {{ module.styles.mobile.title.display }};
+      {% endif %}
+      }
+      .description-section{
+        {{ module.styles.mobile.description.font.css }};
+        text-align: {{ module.styles.mobile.description.textalignment.text_align }};
+        line-height: {{ module.styles.mobile.description.line_height ~ 'px' }};
+        text-wrap:balance;
+      }
+    }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<div class="row">
+    <div class="col">
+      <div class="content-box-headings">
+        <div class="box-headings">
+        {% if module.heading != '' %}
+        <div class="label-section">{{ module.heading }}</div> 
+        {% endif %}
+          {% set level = module.heading_level %}
+          {% if level == 1 %}
+          <h1 class="title-section">{{ module.title }}</h1>
+          {% elif level == 2 %}
+        <h2 class="title-section">{{ module.title }}</h2>
+                    {% elif level == 3 %}
+        <h3 class="title-section">{{ module.title }}</h3>
+                    {% elif level == 4 %}
+        <h4 class="title-section">{{ module.title }}</h4>
+                    {% elif level == 5 %}
+        <h5 class="title-section">{{ module.title }}</h5>
+                    {% else %}
+        <h6 class="title-section">{{ module.title }}</h6>
+          {% endif %}
+          
+        {% if module.image != "" %} 
+          {% if module.image.src %}
+	{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+	{% if module.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+	<img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+{% endif %}
+          {% endif %}
+          
+      {% set description = module.description_hide %}
+      {% if module.description != "" %}
+        <div class="description-section">
+            {{ module.description }}
+        </div>
+      {% endif %}
+      </div>
+      </div>        
+    </div>
+</div>

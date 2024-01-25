@@ -1,0 +1,26 @@
+<div class="grid-container">
+    {% for item in module.team_members %}
+    <div class="team-member_card">
+        <div class="ellipse-bg_team">
+            <div class="img_team">
+                {% if item.image.src %}
+                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                {% if item.image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width:
+                100%; height: auto;"' %}
+                {% elif item.image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}"
+                style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+        </div>
+        <div class="team-info_member">
+            <h3>{{ item.name_ }}</h3>
+            <h4>{{ item.role }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>

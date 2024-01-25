@@ -1,0 +1,31 @@
+<div class="testimonial-container">
+  {% for item in module.testimonial %}
+<div class="testimonial-card">
+  <div class="stars">
+    {% set starLength = item.number_stars %}
+    {% for x in range(0, starLength) %}
+    	{% if item.star.src %}
+		{% set sizeAttrs = 'width="{{ item.star.width }}" height="{{ item.star.height }}"' %}
+		{% if item.star.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item.star.width }}" height="{{ item.star.height }}" style="max-width: 100%; height: auto;"' %}
+		{% elif item.star.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.star.max_width }}" height="{{ item.star.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.star.loading != 'disabled' ? 'loading="{{ item.star.loading }}"' : '' %}
+		<img src="{{ item.star.src }}" alt="{{ item.star.alt }}" {{ loadingAttr }} {{ sizeAttrs }} width="16" height="16" >
+	{% endif %}
+  {% endfor %}
+  </div>
+  <div class="testimonial">
+    <p>
+      {{ item.testimonial }}
+    </p>
+  </div>
+  <div class="info-witness">
+    <h4>
+      {{ item.name_ }}
+    </h4>
+  </div>
+</div>
+{% endfor %}
+</div>

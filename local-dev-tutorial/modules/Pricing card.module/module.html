@@ -1,0 +1,159 @@
+<div class="pricing-container">
+  {% for item in module.card %}
+   <div class="pricing-plan">                                                                               
+   {% if item.tag_icon == false %}
+   <span class="sticker-category">{{ item.tag }}</span>
+   {% else %}
+   <span class="pricing-card_icon">
+    {% icon
+    	name="{{ item.icon.name }}"
+    	style="{{ item.icon.type }}"
+    	unicode="{{ item.icon.unicode }}"
+    	icon_set="{{ item.icon.icon_set }}"
+    %}
+   </span>
+   {% endif %}
+   <div class="pricing-price">{{ item.price }}</div>
+   <p>{{ item.description }}</p>
+     <hr>
+   <ul class="pricing-details">
+   	{% for item2 in item.list %}
+     <li>
+      <span class="icon" style="font-size: 18px; fill:#000!important;">
+        {% icon
+          name="{{ item2.icon.name }}"
+          style="{{ item2.icon.type }}"
+          unicode="{{ item2.icon.unicode }}"
+          icon_set="{{ item2.icon.icon_set }}"
+        %}
+      </span>
+       {{ item2.description }}
+     </li>
+
+   	{% endfor %} 
+   </ul>
+     {% if  item.button_view_all.text  %}
+     <a href="{{ item.button_view_all.url.href }}" class="view-all" >{{ item.button_view_all.text }}</a>
+     {% endif %}
+     {% if item.quotes %}
+     <span class="quotes">{{ item.quotes }}</span>
+     {% endif %}
+     {% if item.quotes_price %}
+     <h3 class="quotes-price">
+       {{ item.quotes_price }}
+     </h3>
+     {% endif %}
+   <a href="{{ item.button.url.url.href }}" class="pricing-button">{{ item.button.button_text }}</a>
+ </div>
+  {% endfor %}
+</div>
+{% require_css %}
+<style>
+{% scope_css %}
+.pricing-container {
+ display: flex;
+ justify-content: center;
+ align-items:center;
+ flex-wrap: wrap;     
+ gap:20px;
+}
+.pricing-plan {
+ border-radius: {{ module.styles.card.radius ~ 'px' }};
+ background: {{ module.styles.card.background_color.color }};
+ {{ module.styles.card.spacing.css }};
+ {{ module.styles.card.border.css }};
+ max-width: {{ module.styles.card.width ~ 'px' }};
+ width:100%;
+}
+.pricing-plan .sticker-category {
+  display: inline;
+  {{ module.styles.tag.font.css }};
+  {{ module.styles.tag.border.css }};
+  border-radius:{{ module.styles.tag.radius ~ 'px' }};
+  line-height: {{ module.styles.tag.line_height ~ 'px' }};
+  {{ module.styles.tag.spacing.css }};
+}
+
+.pricing-card_icon svg {
+ width: {{ module.styles.icon.size_icon ~ 'px' }};
+ height: {{ module.styles.icon.size_icon ~ 'px' }};
+ fill: {{ module.styles.icon.color.color }};
+}
+.pricing-price {
+{{ module.styles.price.font.css }};
+  line-height: {{ module.styles.price.line_height ~ 'px' }};
+  {{ module.styles.price.spacing.css  }};
+}
+.pricing-plan p {
+ {{ module.styles.description.font.css }};
+ line-height: {{ module.styles.description.line_height ~ 'px' }};
+ {{ module.styles.description.spacing.css }};
+}    
+.pricing-details li {
+  {{ module.styles.list_text.font.css }};
+  line-height: {{ module.styles.list_text.line_height ~ 'px' }};
+  {{ module.styles.list_text.spacing_field.css }};
+}
+.pricing-details svg {
+ width: {{ module.styles.list_icon.size ~ 'px' }};
+ height: {{ module.styles.list_icon.size ~ 'px' }};
+ margin-right: 0.25rem;
+ fill: {{ module.styles.list_icon.color.color }};
+ display:flex;
+}
+  
+.view-all {
+color: #FD7756;
+font-family: Lexend Deca;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+padding-bottom: 56px;
+display:block;
+  }
+    
+.quotes {
+color: #FFF;
+font-family: Lexend Deca;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+    }   
+.quotes-price {
+color: #FFF;
+font-family: Lexend Deca;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 46px;
+    }
+.pricing-button {
+ display: flex;
+ padding: 14px 96px;
+ justify-content: center;
+ align-items: center;
+ gap: 8px;
+ background:{{ module.styles.button.color.color }};
+ text-decoration: none;
+ {{ module.styles.button.font.css }};
+ line-height: {{ module.styles.button.line_height ~ 'px' }};
+ {{ module.styles.button.border.css }};
+ border-radius: {{ module.styles.button.radius ~ 'px'}};
+ box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+}
+.pricing-button:hover {
+ background-color: rgba({{ color_variant(module.styles.button.color.color, -30)|convert_rgb }}, {{ module.styles.button.color.opacity / 100 }});
+}
+   
+  
+  @media (max-width:768px) {
+  .pricing-button {
+ padding: 14px 86px;
+    }
+  }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}  

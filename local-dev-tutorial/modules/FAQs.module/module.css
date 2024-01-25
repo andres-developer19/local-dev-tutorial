@@ -1,0 +1,39 @@
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+@media (max-width:768px) {
+  .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+  justify-content: center;
+}
+}
+
+.faq {
+  max-width: 545px;
+  margin-bottom: 40px;
+
+}
+
+.question h3 {
+  margin: 0;
+  color: #252525;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.answer {
+color: #414141;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+}

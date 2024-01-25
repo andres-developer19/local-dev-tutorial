@@ -1,0 +1,37 @@
+.container-toggle_button {
+ width:100%;
+  display:flex;
+  justify-content:center;
+  margin-bottom:100px;
+}
+.toggle-container {
+    display: flex;
+    border: 2px solid #ffffff;
+    padding: 8px;
+    border-radius: 100px;
+    overflow: hidden;
+    width: 318px;
+  }
+  
+  .toggle-btn {
+    flex: 1;
+    background-color: #4a91e200;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    
+    height: 52px;
+  }
+  
+  .toggle-btn.active {
+    background-color: #e83452;
+    border-radius: 100px;
+  }

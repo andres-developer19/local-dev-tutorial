@@ -1,0 +1,62 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+}
+.team-member_card {
+    max-width: 203px;
+    min-height: 217px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.ellipse-bg_team {
+    width: 139px;
+    height: 139px;
+    flex-shrink: 0;
+    stroke: #0029CA;
+    border: 2px solid #0029CA;
+    border-radius: 100%;
+    stroke-width: 2px;
+    stroke: #0029CA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img_team {
+    width: 116px;
+    height: 116px;
+    flex-shrink: 0;
+    border-radius: 100%;
+}
+.img_team img {
+    width: 100%;
+    border-radius: 100%;
+}
+.team-info_member {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.team-info_member h3 {
+    color: #252525;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.team-info_member h4 {
+    color: #414141;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}

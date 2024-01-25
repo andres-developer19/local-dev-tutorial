@@ -1,0 +1,103 @@
+<div class="module">
+  <div class="column">
+    <h2 class="box-title">{{ module.title }}</h2>
+    <p class="box-description">{{ module.description }}</p>
+  </div>
+  <div class="column">
+    <div class="buttons">
+      {% for item in module.button %}
+	
+    <a href="{{ item.url.href }}" class="button button-left">{{ item.text }}</a>
+{% endfor %}
+    {# <a href="" class="button button-right">{{ module.second_button.text }}</a> #}
+    </div>
+  </div>
+</div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+.module {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: {{ module.styles.box.color.color }};
+  {{ module.styles.box.border.css }};
+  {{ module.styles.box.spacing.css }};
+  border-radius: {{ module.styles.box.radius ~ "px" }};
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+    .buttons {
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    gap: 16px;
+    }
+ .box-title {
+  {{ module.styles.title.font.css }};
+  line-height: {{ module.styles.title.line_height ~ "px" }};
+    }
+  .box-description {
+  {{ module.styles.description.font.css }};
+  line-height: {{ module.styles.description.line_height ~ "px" }};
+  }
+.button {
+  {{ module.styles.button.border.css }};
+  {{ module.styles.button.spacing.css }};
+  border-radius:{{ module.styles.button.radius ~ "px" }};
+  cursor: pointer;
+}
+ .button:first-child {    
+  background-color: {{ module.styles.left_button.color.color }};
+  {{ module.styles.left_button.font.css }};
+  {{ module.styles.left_button.border.css }};
+    }
+.button:nth-child(2) {
+  background-color: {{ module.styles.right_button.color.color }};
+  {{ module.styles.right_button.font.css }};
+  {{ module.styles.right_button.border.css }};
+}
+    
+    @media (max-width: 1023px) {
+    .module {
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+    }
+    .buttons {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap: 16px;
+    }
+    }
+        
+    @media (max-width: 768px) {
+    .module {
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+    }
+    .buttons {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    gap: 24px;
+    }
+      
+ .box-title {
+  text-align: center;
+    }
+  .box-description {
+  text-align: center;
+  }
+    }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}

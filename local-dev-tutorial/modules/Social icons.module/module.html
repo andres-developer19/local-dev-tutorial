@@ -1,0 +1,46 @@
+<div class="social-icons">  
+  {% for item in module.social_networks %}  
+  {% set href = item.link.url.href %}
+	{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+	{% endif %}
+	<a href="{{ href }}"
+	{% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+	{% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %} class="icons-social">
+  {% icon
+	name="{{ item.icon.name }}"
+	style="{{ item.icon.type }}"
+	unicode="{{ item.icon.unicode }}"
+	icon_set="{{ item.icon.icon_set }}"
+	%}
+  </a>
+{% endfor %}
+</div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+    
+    .social-icons {
+    display: {{ module.styles.container.display }};
+    gap: {{ module.styles.container.gap ~ "px" }};
+    {{ module.styles.container.spacing.css }};
+    }
+
+    .icons-social span svg {
+      color: rgba({{ module.styles.icon.color.color|convert_rgb }}, {{ module.styles.icon.color.opacity / 100 }});
+      fill: rgba({{ module.styles.icon.color.color|convert_rgb }}, {{ module.styles.icon.color.opacity / 100 }});
+      width:{{ module.styles.icon.width ~ px }};
+      height: {{ module.styles.icon.height ~ "px" }};
+    }
+    .icons-social:hover {
+      color: rgba({{ module.styles.icon.color.color|convert_rgb }}, {{ module.styles.icon.color.opacity / 100 }});
+      fill: rgba({{ module.styles.icon.color.color|convert_rgb }}, {{ module.styles.icon.color.opacity / 100 }});
+    }
+    .icon-height {
+      width: {{ module.styles.icon.width ~ "px" }};
+      height: {{ module.styles.icon.height ~ "px" }};
+    }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %} 

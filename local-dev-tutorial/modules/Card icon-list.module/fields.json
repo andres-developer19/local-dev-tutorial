@@ -1,0 +1,479 @@
+[ {
+  "id" : "215591c8-614d-3e9a-e2a0-b144c53e1b0f",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fc74da87-8095-6afd-a899-83622ca36ed4",
+    "name" : "grid",
+    "display_width" : null,
+    "label" : "Grid",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1012fdba-8f34-c851-398e-a2ce1ba9b3e2",
+      "name" : "columns",
+      "display_width" : null,
+      "label" : "Columns",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 1,
+      "max" : 8,
+      "step" : 1,
+      "suffix" : "columns",
+      "type" : "number",
+      "default" : 2
+    }, {
+      "id" : "250df59a-b68a-f4e0-4f5c-2d3406e9892c",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "BOTH",
+      "type" : "alignment",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "columns" : 2,
+      "alignment" : { }
+    }
+  }, {
+    "id" : "93246407-b85e-69ee-c485-c13fd38d957d",
+    "name" : "card",
+    "display_width" : null,
+    "label" : "Card",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "acf20625-de3d-1efb-bc5a-092ad0b16b70",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "BOTH",
+      "type" : "alignment",
+      "default" : { }
+    }, {
+      "id" : "d64690bd-d189-8318-ccc4-3228cbd21834",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "c6ab0f2c-ecae-b9bc-0f30-6dafc7408798",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : 30,
+            "units" : "px"
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "alignment" : { },
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "spacing" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : 30,
+            "units" : "px"
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "97b6310b-20ff-a021-5cb2-94cac640f92c",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "b39d658d-77d5-6cf3-dd88-e4e946df7c75",
+      "name" : "size",
+      "display_width" : null,
+      "label" : "Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 1,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 32
+    }, {
+      "id" : "db4f2a72-a88f-ad3c-285d-392be86e5905",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "c79f4289-1600-db15-08fa-acd819bfb571",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "BOTH",
+      "type" : "alignment",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "size" : 32,
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "alignment" : { }
+    }
+  }, {
+    "id" : "dcd14c90-6aca-b311-f3ac-86c98828278b",
+    "name" : "list",
+    "display_width" : null,
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6d3f0e15-4cb2-576d-3a7e-01d65450e649",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "icon",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "06a5c2e9-9468-6578-aa3c-a9060f5b3e91",
+        "name" : "size",
+        "display_width" : null,
+        "label" : "Size",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number",
+        "default" : 20
+      }, {
+        "id" : "bbce866b-eeb2-41a1-d354-c0914b814a0a",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : "#000",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "size" : 20,
+        "color" : {
+          "color" : "#000",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "7c9d2e46-4579-7a74-cdb6-089ca04d32a1",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "46b10677-a4e0-785d-88cb-3db165ea72ab",
+        "name" : "font",
+        "display_width" : null,
+        "label" : "Font",
+        "required" : false,
+        "locked" : false,
+        "load_external_fonts" : true,
+        "type" : "font",
+        "default" : {
+          "styles" : { },
+          "variant" : "regular",
+          "font" : "Montserrat",
+          "fallback" : "sans-serif",
+          "font_set" : "GOOGLE",
+          "size" : 16,
+          "color" : "#FFFFFF"
+        }
+      }, {
+        "id" : "063859b5-c73a-49b2-3879-b944bd0cf625",
+        "name" : "line_height",
+        "display_width" : null,
+        "label" : "Line height",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number",
+        "default" : 24
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "font" : {
+          "styles" : { },
+          "variant" : "regular",
+          "font" : "Montserrat",
+          "fallback" : "sans-serif",
+          "font_set" : "GOOGLE",
+          "size" : 16,
+          "color" : "#FFFFFF"
+        },
+        "line_height" : 24
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "icon" : {
+        "size" : 20,
+        "color" : {
+          "color" : "#000",
+          "opacity" : 100
+        }
+      },
+      "text" : {
+        "font" : {
+          "styles" : { },
+          "variant" : "regular",
+          "font" : "Montserrat",
+          "fallback" : "sans-serif",
+          "font_set" : "GOOGLE",
+          "size" : 16,
+          "color" : "#FFFFFF"
+        },
+        "line_height" : 24
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "grid" : {
+      "columns" : 2,
+      "alignment" : { }
+    },
+    "card" : {
+      "alignment" : { },
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "spacing" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : 30,
+            "units" : "px"
+          }
+        }
+      }
+    },
+    "icon" : {
+      "size" : 32,
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "alignment" : { }
+    },
+    "list" : {
+      "icon" : {
+        "size" : 20,
+        "color" : {
+          "color" : "#000",
+          "opacity" : 100
+        }
+      },
+      "text" : {
+        "font" : {
+          "styles" : { },
+          "variant" : "regular",
+          "font" : "Montserrat",
+          "fallback" : "sans-serif",
+          "font_set" : "GOOGLE",
+          "size" : 16,
+          "color" : "#FFFFFF"
+        },
+        "line_height" : 24
+      }
+    }
+  }
+}, {
+  "id" : "81372807-2e32-426e-2995-ad65c99634f9",
+  "name" : "cards",
+  "display_width" : null,
+  "label" : "Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "25d408f7-5dcb-2fb7-4e30-a36b072de9de",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "default" : {
+      "name" : "Store",
+      "unicode" : "f54e",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "6393724e-de21-d1b0-d4a4-3ed42f8d735b",
+    "name" : "list",
+    "display_width" : null,
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "ea7e8bd8-d0f2-81b7-d39e-3c4d2a88efbb",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "default" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
+    }, {
+      "id" : "5c52898e-c94b-421d-e31a-126ba639d89a",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : [ {
+      "icon" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "text" : "text"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "icon" : {
+      "name" : "Store",
+      "unicode" : "f54e",
+      "type" : "SOLID"
+    },
+    "list" : [ {
+      "icon" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "text" : "text"
+    } ]
+  } ]
+} ]

@@ -1,0 +1,85 @@
+{% set sizeAttrs = 'width="{{ module.content.image.width }}" height="{{ module.content.image.height }}"' %}
+{% if module.content.image.size_type == 'auto' %}
+  {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+{% elif module.content.image.size_type == 'auto_custom_max' %}
+  {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.content.image.max_width }}px; max-height: {{ module.content.image.max_height }}px"' %}
+{% endif %}
+
+{#
+{% if module.styles.typography.text_alignment.text_align == 'CENTER' %}
+  {% set text_alignment = "flex justify-center" %}
+{% else if module.styles.typography.text_alignment.text_align == 'LEFT' %}
+  {% set text_alignment = "flex justify-start" %}
+{% else if module.styles.typography.text_alignment.text_align == 'RIGHT' %}
+  {% set text_alignment = "flex justify-end" %}
+{% endif %}
+
+{% if module.styles.mobile.text_alignment.text_align == 'CENTER' %}
+  {% set text_alignmentMobile = "flex justify-center" %}
+{% else if module.styles.mobile.text_alignment.text_align == 'LEFT' %}
+  {% set text_alignmentMobile = "flex justify-start" %}
+{% else if module.styles.mobile.text_alignment.text_align == 'RIGHT' %}
+  {% set text_alignmentMobile = "flex justify-end" %}
+{% endif %} #}
+
+<div {% if module.custom_id %}id="{{ module.custom_id }}"{% endif %} class="image-lite relative {% if module.styles.shadow.shadow %}shadow-md{% endif %} {{ module.custom_classes }}">
+		
+	  {% if module.content.url.href %}
+			<div class="alignImage">
+				<div class="relative">
+					<a href="{{ module.content.url.href }}">
+						<img src="{{ module.content.image.src }}" alt="{{ module.content.image.alt }}" class="block" loading="lazy" {{ sizeAttrs }}>
+					</a>
+				</div>
+			</div>
+		{% else %}
+			<div class="alignImage">
+				<div class="relative">
+					<img src="{{ module.content.image.src }}" alt="{{ module.content.image.alt }}" class="block" loading="lazy" {{ sizeAttrs }}>
+				</div>
+			</div>
+		{% endif %}
+</div>
+
+{% require_css %}
+<style>
+	{% scope_css %}
+	.image-lite {
+		{% if module.styles.background.background_option == 'solid' %}
+		background-color: {{ module.styles.background.bg_color.color }};
+		{% elif module.styles.background.background_option == 'image' %}
+		{{ module.styles.background.bg_image.css }}
+		{% endif %}
+		{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+		{{ module.styles.spacing.spacing.css }}
+	}
+  
+  .alignImage{
+    display:flex;
+    {% if module.styles.typography.textalignment.text_align == "CENTER" %}
+    justify-content:center; 
+    {% elif module.styles.typography.textalignment.text_align == "LEFT" %}
+    justify-content: flex-start;
+    {% elif module.styles.typography.textalignment.text_align == "RIGHT" %}
+    justify-content: flex-end;
+    {% endif %}
+  }
+  
+  @media screen and (max-width:768px) {
+    .image-lite {
+    {{ module.styles.mobile.spacing.css }};
+	}
+  .alignImage{
+    display:flex;
+    {% if module.styles.mobile.textalignment.text_align == "CENTER" %}
+    justify-content:center; 
+    {% elif module.styles.mobile.textalignment.text_align == "LEFT" %}
+    justify-content: flex-start;
+    {% elif module.styles.typography.textalignment.text_align == "RIGHT" %}
+    justify-content: flex-end;
+    {% endif %}
+  }
+  }
+	{% end_scope_css %}
+</style>
+{% end_require_css %}

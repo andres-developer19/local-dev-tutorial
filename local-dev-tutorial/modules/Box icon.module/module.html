@@ -1,0 +1,120 @@
+{% require_css %}
+  <style>
+{% scope_css %}
+
+.container-box_icon {
+  display:{{ module.styles.container.display }};
+  gap:{{ module.styles.container.gap ~ "px"}};
+  {% if module.styles.container.width %}
+  max-width:{{ module.styles.container.width ~ "px" }};
+  {% endif %}
+  {{ module.styles.container.alignment.css }};
+
+}
+.box-icon_content {
+display: flex;
+flex-direction: column;
+gap: 34px;
+{{ module.styles.container.spacing.css }};
+}
+.box-icon .title-box_icon {
+{{ module.styles.title.font.css }};
+line-height: {{ module.styles.title.line_height ~ "px" }};
+  {{ module.styles.title.textalignment.css }};
+}
+
+.box-icon .description-box_icon {
+{{ module.styles.description.font.css }};
+  line-height: {{ module.styles.description.line_height ~ "px" }};
+  {% if module.styles.description.width %}
+max-width: {{ module.styles.description.width ~ "px" }};
+  {% endif %}
+  {{ module.styles.description.textalignment.css }};
+}
+
+.box-icon .icon-box_icon {
+width: 48px;
+height: 48px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 48px;
+background:  #FBFF00;
+}
+    .icon-box_icon span svg {
+    width:14px;
+    height:11px;
+    }
+    
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+<div class="box-icon_content">
+  {% for item in module.box %}
+	
+
+  
+  
+<div class="overflow-hidden box-icon">
+<div class="container-box_icon">
+<div>
+  <span class="inline-flex rounded-lg ring-white icon-box_icon">
+ {% icon
+		name="{{ item.icon.name }}"
+		style="{{ item.icon.type }}"
+		unicode="{{ item.icon.unicode }}"
+		icon_set="{{ item.icon.icon_set }}"
+	%}
+          
+  </span>
+</div>
+<div class="mt-0">
+  <h3 class="text-base font-semibold leading-6 text-gray-900">
+    <a href="#" class="focus:outline-none">
+      <!-- Extend touch target to entire panel -->
+      <span class="title-box_icon" aria-hidden="true">
+      {{ item.title }}</span>
+    </a>
+  </h3>
+  {% if item.description %}
+  <p class="description-box_icon">{{ item.description }}</p>
+  {% endif %}
+</div>
+</div>
+</div>
+  
+  
+  
+  
+  
+  
+
+{% endfor %}
+</div>
+
+{#   
+<div class="overflow-hidden box-icon">
+    <div class="container-box_icon">
+      <div>
+        <span class="inline-flex rounded-lg ring-white icon-box_icon">
+            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.793 0.292786C7.98053 0.105315 8.23484 0 8.5 0C8.76516 0 9.01947 0.105315 9.207 0.292786L13.707 4.79279C13.8945 4.98031 13.9998 5.23462 13.9998 5.49979C13.9998 5.76495 13.8945 6.01926 13.707 6.20679L9.207 10.7068C9.0184 10.8889 8.7658 10.9897 8.5036 10.9875C8.2414 10.9852 7.99059 10.88 7.80518 10.6946C7.61977 10.5092 7.5146 10.2584 7.51233 9.99619C7.51005 9.73399 7.61084 9.48139 7.793 9.29279L10.5 6.49979H1C0.734784 6.49979 0.48043 6.39443 0.292893 6.20689C0.105357 6.01936 0 5.765 0 5.49979C0 5.23457 0.105357 4.98022 0.292893 4.79268C0.48043 4.60514 0.734784 4.49979 1 4.49979H10.5L7.793 1.70679C7.60553 1.51926 7.50021 1.26495 7.50021 0.999786C7.50021 0.734622 7.60553 0.480314 7.793 0.292786Z" fill="black"/>
+                </svg>
+                
+        </span>
+      </div>
+      <div class="mt-0">
+        <h3 class="text-base font-semibold leading-6 text-gray-900">
+          <a href="#" class="focus:outline-none">
+            <!-- Extend touch target to entire panel -->
+            <span class="title-box_icon" aria-hidden="true">
+            Request time off</span>
+          </a>
+        </h3>
+        <p class="description-box_icon">Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.</p>
+      </div>
+    </div>
+</div> #}

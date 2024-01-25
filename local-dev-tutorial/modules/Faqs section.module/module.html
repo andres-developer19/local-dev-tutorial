@@ -1,0 +1,95 @@
+{% require_css %}
+<style>
+  {% scope_css %}
+.section-faqs {
+    background-color: #ffffff;
+    padding: 100px 50px;
+}
+
+.section-faqs .container-faqs {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.section-faqs .container-faqs .column-left_faqs {
+    grid-column: span 5;
+}
+
+.section-faqs .container-faqs .column-left_faqs .title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+    color: #1a202c;
+    font-family: Inter;
+}
+
+.section-faqs .container-faqs .column-left_faqs .description {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #414141;
+    font-family: Inter;
+}
+
+.section-faqs .container-faqs .column-right_faqs {
+    margin-top: 26px;
+    grid-column: span 7;
+    margin-top: 0;
+}
+
+.section-faqs .container-faqs .column-right_faqs .faqs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.section-faqs .container-faqs .column-right_faqs .faqs-content .question {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #1a202c;
+    font-family: Inter;
+}
+
+.section-faqs .container-faqs .column-right_faqs .faqs-content .answer {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #4a5568;
+    font-family: Inter;
+    margin-left: 0;
+}
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section class="section-faqs">
+    <div class="container">
+        <div class="bg-white">
+            <div class="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
+              <div class="container-faqs">
+                <div class="column-left_faqs">
+                  <h2 class="title">{{ module.heading.title }}</h2>
+                  <p class="description">{{ module.heading.description }}</p>
+                </div>
+                <div class="column-right_faqs">
+                  <dl class="faqs-content">
+                    
+                    {% for item in module.faqs %}
+                      <div>
+                      <dt class="question">{{ item.question }}</dt>
+                      <dd class="answer">{{ item.answer }}</dd>
+                    </div>
+                    {% endfor %}
+                    <!-- More questions... -->
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>
+

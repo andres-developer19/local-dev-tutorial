@@ -1,0 +1,36 @@
+<div class="container-box">
+  <div class="box-heading">
+    <span>{{ module.heading }}</span>
+    <h3>{{ module.title }}</h3>
+  </div>
+</div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+    .container-box {
+    background-color:{{ module.styles.background.container.color.color }};
+    }
+    
+    
+    .box-heading {
+    background-color:{{ module.styles.background.box_heading.color.color }};
+    }
+    
+    .box-heading span {
+    {{ module.styles.label_.font.css }};
+    line-height: {{ module.styles.label_.line_height ~ 'px' }};
+    }
+    .box-heading h3 {
+    {{ module.styles.title.font.css }};
+    line-height:{{ module.styles.title.line_height ~ 'px' }};
+    }
+    
+    @media (min-width:1024px){
+    .container-box {
+    position: absolute;
+    left: 0;
+    }
+    }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}    

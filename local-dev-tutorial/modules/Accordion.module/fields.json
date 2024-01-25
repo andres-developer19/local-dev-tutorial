@@ -1,0 +1,547 @@
+[ {
+  "id" : "94ab9722-6bec-0d66-13c2-e33b41405627",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3b8afdaa-fdf4-f36b-bf0e-8644c40c9184",
+    "name" : "accordion_width",
+    "display_width" : null,
+    "label" : "Accordion width",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "cd7ba343-5303-6107-609b-0ee089a83ea3",
+      "name" : "width",
+      "display_width" : null,
+      "label" : "Width",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 734
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "width" : 734
+    }
+  }, {
+    "id" : "0841c6ee-e68b-9835-2f91-8309aae5d873",
+    "name" : "accordion_item",
+    "display_width" : null,
+    "label" : "Accordion item",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "34311165-e23d-c889-160d-a6e083e43492",
+      "name" : "position",
+      "display_width" : null,
+      "label" : "Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "relative", "Relative" ], [ "absolute", "Absolute" ], [ "fixed", "Fixed" ], [ "sticky", "Sticky" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "relative"
+    }, {
+      "id" : "e8e39a3a-e025-9e8e-0383-01541308de32",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : 32,
+            "units" : "px"
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "position" : "relative",
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : 32,
+            "units" : "px"
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "8d3a2892-a4a0-e5e2-ff91-b6656446c8ed",
+    "name" : "accordion_question",
+    "display_width" : null,
+    "label" : "Accordion question",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f501c200-c2a7-28e3-465a-035ff27ed3be",
+      "name" : "position",
+      "display_width" : null,
+      "label" : "Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "relative", "Relative" ], [ "absolute", "Absolute" ], [ "fixed", "Fixed" ], [ "sticky", "Sticky" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "relative"
+    }, {
+      "id" : "6e70ee1d-9903-7818-b2b5-d58e6b716fef",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : "#FBFF00",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "7f0d57a2-eff5-ba0e-956d-ad6bbedf4062",
+      "name" : "font",
+      "display_width" : null,
+      "label" : "Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "default" : {
+        "styles" : { },
+        "variant" : "700",
+        "font" : "Space Grotesk",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "size" : 18,
+        "color" : "#000000"
+      }
+    }, {
+      "id" : "3701c8f2-bb71-d731-d9a2-1d32b9083d72",
+      "name" : "line_height",
+      "display_width" : null,
+      "label" : "Line height",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 21
+    }, {
+      "id" : "323ffe11-d42f-ebf7-390e-8d026d5102a3",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : 16,
+            "units" : "px"
+          }
+        },
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "63555333-fa2a-50b5-6ef9-b3ffa68b1b06",
+      "name" : "border",
+      "display_width" : null,
+      "label" : "Border",
+      "required" : false,
+      "locked" : false,
+      "allow_custom_border_sides" : false,
+      "type" : "border",
+      "default" : { }
+    }, {
+      "id" : "6ae27066-a2e4-02ea-4c6d-572bb1dc170b",
+      "name" : "radius",
+      "display_width" : null,
+      "label" : "Radius",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 0
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "position" : "relative",
+      "background_color" : {
+        "color" : "#FBFF00",
+        "opacity" : 100
+      },
+      "font" : {
+        "styles" : { },
+        "variant" : "700",
+        "font" : "Space Grotesk",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "size" : 18,
+        "color" : "#000000"
+      },
+      "line_height" : 21,
+      "spacing" : {
+        "padding" : {
+          "top" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : 16,
+            "units" : "px"
+          }
+        },
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "radius" : 0
+    }
+  }, {
+    "id" : "c2d240a2-25cf-1b94-9e0e-39c8c6831767",
+    "name" : "accordion_answer",
+    "display_width" : null,
+    "label" : "Accordion answer",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f3f5a15b-897d-a2cc-e03f-2771e3eccd65",
+      "name" : "position",
+      "display_width" : null,
+      "label" : "Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "relative", "Relative" ], [ "absolute", "Absolute" ], [ "fixed", "Fixed" ], [ "sticky", "Sticky" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "relative"
+    }, {
+      "id" : "184be043-0242-8c6c-84a2-7f358414fdf6",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "86957e17-b483-3062-75e9-50d0e9c76526",
+      "name" : "font",
+      "display_width" : null,
+      "label" : "Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "default" : {
+        "styles" : { },
+        "variant" : "regular",
+        "font" : "Space Grotesk",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "size" : 16,
+        "color" : "#000000"
+      }
+    }, {
+      "id" : "c12be3fa-b96a-60e8-908a-dce635cda125",
+      "name" : "line_height",
+      "display_width" : null,
+      "label" : "Line height",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 25
+    }, {
+      "id" : "44d459b2-8e3a-aa6f-6a6d-1b89f31e635e",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          },
+          "left" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "position" : "relative",
+      "background_color" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "font" : {
+        "styles" : { },
+        "variant" : "regular",
+        "font" : "Space Grotesk",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "size" : 16,
+        "color" : "#000000"
+      },
+      "line_height" : 25,
+      "spacing" : {
+        "padding" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          },
+          "left" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "accordion_width" : {
+      "width" : 734
+    },
+    "accordion_item" : {
+      "position" : "relative",
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : 32,
+            "units" : "px"
+          }
+        }
+      }
+    },
+    "accordion_question" : {
+      "position" : "relative",
+      "background_color" : {
+        "color" : "#FBFF00",
+        "opacity" : 100
+      },
+      "font" : {
+        "styles" : { },
+        "variant" : "700",
+        "font" : "Space Grotesk",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "size" : 18,
+        "color" : "#000000"
+      },
+      "line_height" : 21,
+      "spacing" : {
+        "padding" : {
+          "top" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : 16,
+            "units" : "px"
+          }
+        },
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "radius" : 0
+    },
+    "accordion_answer" : {
+      "position" : "relative",
+      "background_color" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "font" : {
+        "styles" : { },
+        "variant" : "regular",
+        "font" : "Space Grotesk",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "size" : 16,
+        "color" : "#000000"
+      },
+      "line_height" : 25,
+      "spacing" : {
+        "padding" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          },
+          "left" : {
+            "value" : 16,
+            "units" : "px"
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "079b7ae5-10fc-7bf3-6289-c05eb93abf24",
+  "name" : "faqs",
+  "display_width" : null,
+  "label" : "Faqs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "4b6fb416-c291-7ac2-8860-6a77a1ae26e4",
+    "name" : "question",
+    "display_width" : null,
+    "label" : "Question",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "9527d713-d6b8-90f6-4fd0-8b11cecba0be",
+    "name" : "answer",
+    "display_width" : null,
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ { } ]
+} ]

@@ -1,0 +1,128 @@
+.pricing { 
+background-color: #08101d;
+    padding: 100px 50px;
+}
+.heading-section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.heading-section .title-section {
+      font-size: 30px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+  }
+
+.heading-section .description-section {
+      margin-top: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #fafafa;
+  }
+
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pricing-plan {
+    border-radius: 8px;
+    background: #F2F2F6;
+    padding: 48px 36px;
+    border: 1px solid #e5e7eb;
+    margin: 1rem;
+    max-width: 376px;
+    width:100%;
+}
+
+.pricing-plan .sticker-category {
+                display: inline;
+                padding: 0px 16px;
+                margin-bottom: 24px;
+                border-radius: 48px;
+                border: 1px solid #A8A8A8;
+                color: #686868;
+                font-family: Inter;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 36px;
+            }
+
+.pricing-plan p {
+                color: #686868;
+                font-family: Inter;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 36px;
+            }
+.pricing-price {
+                color: #282828;
+                font-family: Inter;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: 48px;
+            }
+
+.pricing-details {
+    list-style: none;
+    padding: 0;
+    margin: 36px 0;
+}
+
+.pricing-details .icon {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.pricing-details li {
+                    color: #686868;
+                    font-family: Inter;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 32px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                }}
+
+.pricing-details svg {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+    fill: #6366f1;
+    display:flex;
+}
+
+.pricing-button {
+    border-radius: 8px;
+                background: #08101d;
+                display: flex;
+                padding: 14px 96px;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                color: #f5f5f5;
+                text-decoration: none;
+                font-family: Inter;
+                font-weight: 600;
+                font-size: 18px;
+                box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-button:hover {
+    background-color: #2e2e2edc;
+}

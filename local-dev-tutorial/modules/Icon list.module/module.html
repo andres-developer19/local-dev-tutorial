@@ -1,0 +1,64 @@
+{% require_css %}
+<style>
+  {% scope_css %}
+  .icon-list {
+  {{ module.styles.icon_list.spacing.css }}
+  }
+  .icon-list li .item-list_text {
+  {{ module.styles.icon_text.font.css }};
+  line-height: {{ module.styles.icon_text.line_height ~ 'px' }};
+}
+  .icon-list li .icon {
+
+  color: #fff;
+  padding:10px;
+  background-color:#D7412C;
+  border-radius:8px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+  
+  .icon-list li .icon span {
+  width: 16px;
+  height:16px;
+  }
+
+.icon-list li .icon path {
+  width: 16px;
+  height:16px;
+  color: #fff;
+  fill: #fff;
+    width: 16px;
+  height:16px;
+  color: #fff;
+  padding:10px;
+}
+.icon-list li .icon svg {
+  width: 16px;
+  height:16px;
+  color: #fff;
+  fill: #fff;
+}
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+<div class="icon-list_container">
+  <ul class="icon-list">
+    {% for item in module.icon_list %}
+    <li>
+        <span class="icon" style="font-size: 18px; fill:{{ module.styles.card.title.font.color }}!important;">
+          {% icon
+            name="{{ item.icon.name }}"
+            style="{{ item.icon.type }}"
+            unicode="{{ item.icon.unicode }}"
+            icon_set="{{ item.icon.icon_set }}"
+          %}
+        </span>
+        <span class="item-list_text">
+          {{ item.text }}
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+</div>

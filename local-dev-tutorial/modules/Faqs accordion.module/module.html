@@ -1,0 +1,91 @@
+<div class="faq-container">
+{% for item in module.faqs %}
+<div class="faq-item">
+  <div class="faq-question">
+    <span class="question-text">{{ item.question }}</span>
+    <span class="toggle-icon">+</span>
+  </div>
+  <div class="faq-answer">
+    <span>{{ item.answer }}</span>
+  </div>
+</div>
+{% endfor %}
+</div> 
+{% require_css %}
+<style>
+  {% scope_css %}
+.faq-container {
+  max-width:911px;
+  width:100%;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.faq-item {
+  background: #213343;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 24px 40px;
+}
+
+.question-text {
+color: #FFF;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px;
+}
+
+.toggle-icon {
+  font-size: 32px;
+  transition: transform 0.3s ease;
+  color: #ED2D40;
+}
+
+.faq-answer {
+padding: 10px;
+color: #FFF;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+display:none;
+}
+
+/* Estilos para la versión oscura */
+.faq-section.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.faq-item.dark-mode {
+  border-color: #555;
+}
+
+.faq-question.dark-mode {
+  background-color: #444;
+}
+
+.question-text.dark-mode {
+  color: #fff;
+}
+
+.toggle-icon.dark-mode {
+  color: #fff;
+}
+
+.faq-answer.dark-mode {
+  background-color: #555;
+}
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

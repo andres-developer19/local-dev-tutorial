@@ -1,0 +1,110 @@
+  <div class="container-content">
+    <div class="content-list">
+      <ul id="content-list">
+        
+      </ul>
+    </div>
+    <div class="content" id="contentBody">
+      <div class="content-body">
+        {{ module.content }}
+      </div>  
+    </div>
+  </div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+    .container-content {
+  display:flex;
+  gap:48px;
+}
+.content-list {
+ width:35%; 
+}
+.content {
+ width:65%; 
+}
+
+#content-list {
+list-style: none;
+}
+    
+#content-list li {
+list-style: none;
+}
+#content-list li a {
+color: #FFF;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 48px;
+text-decoration: none;
+}
+#content-list li a:hover,
+.current {
+font-size: 18px;
+font-weight: 600;
+}
+
+h1{
+color: #FFF;
+font-family: Montserrat;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px;
+}
+h2 {
+color: #FFF;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px;
+}
+h3 {
+color: #FFF;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px;
+}
+h4 {
+color: #FFF;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px;
+}
+h5 {
+color: #FFF;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px;
+}
+h6 {
+color: #FFF;
+font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px;
+}
+p {
+color: rgba(255, 255, 255, 0.72);
+
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; 
+}
+    {% end_scope_css %}
+      </style>
+{% end_require_css %}
+
+    

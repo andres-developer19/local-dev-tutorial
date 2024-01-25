@@ -1,0 +1,54 @@
+<section class="testimonials">
+  <div class="container">
+
+    <div class="heading-section">
+      <h2 class="title-section">Testimonials</h2>
+      <p class="description-section">We’re a dynamic group of individuals who are passionate about what we do.</p>
+    </div>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        
+        {% for item in module.testimonial %}
+        <div class="swiper-slide">
+          <figure class="figure">
+            <p class="text-star">5 out of 5 stars</p>
+            <div class="stars">
+        {% for item2 in item.icon_stars %}
+            <span class="star-icon">
+             {% icon
+              name="{{ item2.name }}"
+              style="{{ item2.type }}"
+              unicode="{{ item2.unicode }}"
+              icon_set="{{ item2.icon_set }}"
+            %}
+           </span>
+
+        {% endfor %}
+            </div>
+            <blockquote class="testimonial">
+              <p>{{ item.testimonial }}</p>
+            </blockquote>
+            <figcaption class="testimonial-footer">
+              {% if item.image_profile.src %}
+                {% set sizeAttrs = 'width="{{ item.image_profile.width }}" height="{{ item.image_profile.height }}"' %}
+                {% if item.image_profile.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.image_profile.width }}" height="{{ item.image_profile.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.image_profile.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.image_profile.max_width }}" height="{{ item.image_profile.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.image_profile.loading != 'disabled' ? 'loading="{{ item.image_profile.loading }}"' : '' %}
+                <img class="testimonial-image" src="{{ item.image_profile.src }}" alt="{{ item.image_profile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+              <div class="testimonial-profile">
+                <div class="testimonial-profile_name">{{ item.name_profile }}</div>
+                <div class="testimonial-profile_role">{{ item.role_profile }}</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

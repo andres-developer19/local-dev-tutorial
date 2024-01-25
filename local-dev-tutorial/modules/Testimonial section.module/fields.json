@@ -1,0 +1,218 @@
+[ {
+  "id" : "1de6f99a-d966-56a9-7a39-01b9b8af270a",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "676432af-717c-f24e-2441-c3968f501840",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Testimonials"
+  }, {
+    "id" : "24d27f11-acf8-627d-1135-c78b2028fbbe",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "We’re a dynamic group of individuals who are passionate about what we do."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Testimonials",
+    "description" : "We’re a dynamic group of individuals who are passionate about what we do."
+  }
+}, {
+  "id" : "35806df4-a130-9a14-8a4c-e0cb1403dcdc",
+  "name" : "testimonial",
+  "display_width" : null,
+  "label" : "Testimonial",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "fc8af8f5-6924-3328-8b2e-4bf17c15cd56",
+    "name" : "icon_stars",
+    "display_width" : null,
+    "label" : "Icon stars",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "default" : [ {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    } ]
+  }, {
+    "id" : "d62e2145-7108-9af2-6549-9c18a8285aef",
+    "name" : "testimonial",
+    "display_width" : null,
+    "label" : "Testimonial",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "“Qui dolor enim consectetur do et non ex amet culpa sint in ea non dolore. Enim minim magna anim id minim eu cillum sunt dolore aliquip. Amet elit laborum culpa irure incididunt adipisicing culpa amet officia exercitation. Eu non aute velit id velit Lorem elit anim pariatur.”"
+  }, {
+    "id" : "4d4bad8d-a443-8674-eb6d-3b1075ad4e83",
+    "name" : "name_profile",
+    "display_width" : null,
+    "label" : "Name profile",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Judith Black"
+  }, {
+    "id" : "b451738f-4d2a-a19f-a144-9716422cc381",
+    "name" : "image_profile",
+    "display_width" : null,
+    "label" : "Image profile",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    }
+  }, {
+    "id" : "857666f9-b2de-0770-ba02-863c7b8246ec",
+    "name" : "role_profile",
+    "display_width" : null,
+    "label" : "Role profile",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "CEO of Workcation"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "icon_stars" : [ {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    } ],
+    "testimonial" : "“Qui dolor enim consectetur do et non ex amet culpa sint in ea non dolore. Enim minim magna anim id minim eu cillum sunt dolore aliquip. Amet elit laborum culpa irure incididunt adipisicing culpa amet officia exercitation. Eu non aute velit id velit Lorem elit anim pariatur.”",
+    "name_profile" : "Judith Black",
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "role_profile" : "CEO of Workcation"
+  }, {
+    "icon_stars" : [ {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }, {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    } ],
+    "testimonial" : "“Qui dolor enim consectetur do et non ex amet culpa sint in ea non dolore. Enim minim magna anim id minim eu cillum sunt dolore aliquip. Amet elit laborum culpa irure incididunt adipisicing culpa amet officia exercitation. Eu non aute velit id velit Lorem elit anim pariatur.”",
+    "name_profile" : "Judith Black",
+    "image_profile" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/Imported%20images/photo-1494790108377-be9c29b29330%3Fixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80.jpeg",
+      "alt" : "photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "loading" : "lazy",
+      "width" : 256,
+      "height" : 256,
+      "max_width" : 256,
+      "max_height" : 256
+    },
+    "role_profile" : "CEO of Workcation"
+  } ]
+} ]

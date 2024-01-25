@@ -1,0 +1,88 @@
+<div class="container-link">
+  {% for item in module.links %}
+	{% set href = item.link.url.href %}
+	{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+	{% endif %}
+	<a href="{{ href }}"
+		{% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+		{% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+		>
+		{{ item.text }}
+	</a>
+{% endfor %}
+</div>
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+    
+    .container-link {
+      display: flex;
+      {% if module.styles.container.alignment.horizontal_align %}
+      {% if module.styles.container.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.container.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.container.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %}
+      
+      {% if module.styles.container.alignment.vertical_align %}
+      {% if module.styles.container.alignment.vertical_align == "BOTTOM" %}
+        align-items: flex-start;
+      {% elif module.styles.container.alignment.vertical_align == "MIDDLE" %}
+        align-items: center;
+      {% elif module.styles.container.alignment.vertical_align == "TOP" %}
+        align-items: flex-end;
+      {% endif %}
+      {% endif %}
+      gap: {{ module.styles.container.gap ~ "px" }};
+      {% if module.styles.container.flex_direction %}
+      flex-direction: {{ module.styles.container.flex_direction }};
+      {% endif %}
+      {{ module.styles.container.spacing.css }};
+      
+    }
+    
+    .container-link a {
+      {{ module.styles.links.font.css }};
+      line-height: {{ module.styles.links.line_height ~ "px" }};
+    }
+    
+    @media (max-width: 768px) {
+    .container-link {
+      display: {{ module.styles.mobile.container.display }};
+      gap: {{ module.styles.mobile.container.gap ~ "px" }};
+      {% if module.styles.mobile.container.flex_direction %}
+      flex-direction: {{ module.styles.mobile.container.flex_direction }};
+      {% endif %}
+      {{ module.styles.mobile.container.spacing.css }};
+      
+      {% if module.styles.mobile.container.alignment.horizontal_align %}
+      {% if module.styles.mobile.container.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.mobile.container.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.mobile.container.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %}
+      
+      {% if module.styles.mobile.container.alignment.vertical_align %}
+      {% if module.styles.mobile.container.alignment.vertical_align == "BOTTOM" %}
+        align-items: flex-start;
+      {% elif module.styles.mobile.container.alignment.vertical_align == "MIDDLE" %}
+        align-items: center;
+      {% elif module.styles.mobile.container.alignment.vertical_align == "TOP" %}
+        align-items: flex-end;
+      {% endif %}
+      {% endif %}
+      
+    }
+    }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}    

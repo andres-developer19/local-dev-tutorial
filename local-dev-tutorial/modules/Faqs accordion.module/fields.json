@@ -1,0 +1,46 @@
+[ {
+  "id" : "d676234d-5d49-ba4d-267b-3f23870e7e12",
+  "name" : "faqs",
+  "display_width" : null,
+  "label" : "Faqs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "78214c75-6801-9b9d-ba09-f9c51f439bdd",
+    "name" : "question",
+    "display_width" : null,
+    "label" : "Question",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Do I need a HubSpot License?"
+  }, {
+    "id" : "37acf157-0e7b-dd5e-7a26-58ad32bf484d",
+    "name" : "answer",
+    "display_width" : null,
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "..."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "question" : "Do I need a HubSpot License?",
+    "answer" : "..."
+  } ]
+} ]

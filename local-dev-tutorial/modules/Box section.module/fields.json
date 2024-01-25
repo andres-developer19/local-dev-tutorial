@@ -1,0 +1,271 @@
+[ {
+  "id" : "522e462b-e2c9-6f78-51ae-24eadf78dde4",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Lorem ipsum"
+}, {
+  "id" : "29e9fefb-a81d-11cb-5a76-935643698481",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8d2189a1-b1d2-b329-9a33-1fdd5abb8577",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "bbd45d62-991b-ae37-4ce8-1b093d0665e6",
+      "name" : "container",
+      "display_width" : null,
+      "label" : "Container",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "cfc84d17-11f2-c22d-4944-5399d8bb4b6d",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : "#00123F",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "color" : {
+          "color" : "#00123F",
+          "opacity" : 100
+        }
+      }
+    }, {
+      "id" : "822cd5a5-390e-566d-9b85-d66c9157d18a",
+      "name" : "box_heading",
+      "display_width" : null,
+      "label" : "Box Heading",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "9c3ebc37-c997-1789-1f3b-e597b9044aa1",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : "#F0F6FF",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "color" : {
+          "color" : "#F0F6FF",
+          "opacity" : 100
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "container" : {
+        "color" : {
+          "color" : "#00123F",
+          "opacity" : 100
+        }
+      },
+      "box_heading" : {
+        "color" : {
+          "color" : "#F0F6FF",
+          "opacity" : 100
+        }
+      }
+    }
+  }, {
+    "id" : "9ee8ef3f-4f61-fb16-fead-189376ac04f7",
+    "name" : "label_",
+    "display_width" : null,
+    "label" : "Label ",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "21503fb6-8ef6-c7de-6dfb-ef5ad13acf63",
+      "name" : "font",
+      "display_width" : null,
+      "label" : "Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "default" : {
+        "size" : 18,
+        "styles" : {
+          "text-decoration" : "none"
+        },
+        "variant" : "500",
+        "font" : "Montserrat",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "color" : "#0029ca"
+      }
+    }, {
+      "id" : "233332bc-efc6-8b86-48fb-e37f48820360",
+      "name" : "line_height",
+      "display_width" : null,
+      "label" : "Line height",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 31
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "font" : {
+        "size" : 18,
+        "styles" : {
+          "text-decoration" : "none"
+        },
+        "variant" : "500",
+        "font" : "Montserrat",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "color" : "#0029ca"
+      },
+      "line_height" : 31
+    }
+  }, {
+    "id" : "2d82e302-d89f-3105-733e-169fa87fac35",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6dbf4226-39bb-d387-3121-4cfc2c8d5d2e",
+      "name" : "font",
+      "display_width" : null,
+      "label" : "Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "default" : {
+        "color" : "#000000",
+        "size" : 36,
+        "styles" : { },
+        "variant" : "regular",
+        "font" : "Montserrat",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE"
+      }
+    }, {
+      "id" : "c7765db7-c465-6cd9-5cdc-c34aceeaf7ce",
+      "name" : "line_height",
+      "display_width" : null,
+      "label" : "Line height",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 46
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "font" : {
+        "color" : "#000000",
+        "size" : 36,
+        "styles" : { },
+        "variant" : "regular",
+        "font" : "Montserrat",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE"
+      },
+      "line_height" : 46
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background" : {
+      "container" : {
+        "color" : {
+          "color" : "#00123F",
+          "opacity" : 100
+        }
+      },
+      "box_heading" : {
+        "color" : {
+          "color" : "#F0F6FF",
+          "opacity" : 100
+        }
+      }
+    },
+    "label_" : {
+      "font" : {
+        "size" : 18,
+        "styles" : {
+          "text-decoration" : "none"
+        },
+        "variant" : "500",
+        "font" : "Montserrat",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE",
+        "color" : "#0029ca"
+      },
+      "line_height" : 31
+    },
+    "title" : {
+      "font" : {
+        "color" : "#000000",
+        "size" : 36,
+        "styles" : { },
+        "variant" : "regular",
+        "font" : "Montserrat",
+        "fallback" : "sans-serif",
+        "font_set" : "GOOGLE"
+      },
+      "line_height" : 46
+    }
+  }
+}, {
+  "id" : "afc57b4c-874d-04af-8f30-0fedd445a907",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Horem ipsum dolor sit amet"
+} ]

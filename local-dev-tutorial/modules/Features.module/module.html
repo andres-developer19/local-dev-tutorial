@@ -1,0 +1,72 @@
+<div class="content-column_light">
+  {% for item in module.features %}
+ {% set currentLast = loop.last %}
+<div class="item-content">
+  <h3 class="title-column_light">{{ item.title }}</h3>
+  <p class="description-column_light">{{ item.description }}</p>
+  {% if currentLast != true %}
+  <hr class="divider">
+  {% endif %}
+</div>
+{% endfor %}
+</div>
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+    
+    .content-column_light {
+      display: {{ module.styles.container.display }};
+      flex-direction: {{ module.styles.container.flex_direction }};
+      
+      {% if module.styles.container.alignment.horizontal_align %}
+      {% if module.styles.container.alignment.horizontal_align == "LEFT" %}
+        justify-content: flex-start;
+      {% elif module.styles.container.alignment.horizontal_align == "CENTER" %}
+        justify-content: center;
+      {% elif module.styles.container.alignment.horizontal_align == "RIGHT" %}
+        justify-content: flex-end;
+      {% endif %}
+      {% endif %}
+      
+      {% if module.styles.container.alignment.vertical_align %}
+      {% if module.styles.container.alignment.vertical_align == "TOP" %}
+        align-items: flex-start;
+      {% elif module.styles.container.alignment.vertical_align == "MIDDLE" %}
+        align-items: center;
+      {% elif module.styles.container.alignment.vertical_align == "BOTTOM" %}
+        align-items: flex-end;
+      {% endif %}
+      {% endif %}
+      gap: {{ module.styles.container.gap ~ "px" }};
+    }
+  
+    .content-column_light .item-content .title-column_light {
+      {{ module.styles.title.font.css }};
+      {% if module.styles.title.line_height %}
+      line-height: {{ module.styles.title.line_height ~ "px" }};
+      {% endif %}
+      {{ module.styles.title.spacing.css }};
+      {{ module.styles.title.textalignment.css }};
+    }
+  
+    .content-column_light .item-content .description-column_light {
+      width: 300px;
+      {{ module.styles.description.font.css }};
+      {% if module.styles.description.line_height %}
+      line-height: normal;
+      {% endif %}
+      {{ module.styles.description.spacing.css }};
+      {{ module.styles.description.textalignment.css }};
+    }
+  
+    .content-column_light .item-content .divider {
+      border-color: rgba({{ module.styles.divider.color.color|convert_rgb }}, {{ module.styles.divider.color.opacity / 100 }});
+      width: {{ module.styles.divider.width ~ "%" }};
+      height: {{ module.styles.divider.height ~ "px" }};
+      {{ module.styles.divider.textalignment.css }};
+    }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %} 

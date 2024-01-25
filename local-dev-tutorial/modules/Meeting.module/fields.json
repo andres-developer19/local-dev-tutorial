@@ -1,0 +1,11 @@
+[ {
+  "id" : "fa5500d5-9509-a65a-999a-f98c0a954f6c",
+  "name" : "meeting",
+  "display_width" : null,
+  "label" : "Meeting",
+  "required" : false,
+  "locked" : false,
+  "embeddable" : false,
+  "type" : "meeting",
+  "default" : "https://meetings.hubspot.com/andres385"
+} ]

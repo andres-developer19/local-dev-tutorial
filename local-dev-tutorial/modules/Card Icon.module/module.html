@@ -1,0 +1,100 @@
+<div class="card-grid">
+  {% for item in module.cards %}
+  <div class="card-icon">
+  <span class="icon" style="font-size: 18px; fill:{{ module.styles.card.title.font.color }}!important;">
+    {% icon
+      name="{{ item.icon.name }}"
+      style="{{ item.icon.type }}"
+      unicode="{{ item.icon.unicode }}"
+      icon_set="{{ item.icon.icon_set }}"
+    %}
+  </span>
+  <h3>{{ item.title }}</h3>
+  <p>{{ item.description }}</p>
+</div>
+{% endfor %}
+</div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+   .card-grid {
+    display: grid;
+    grid-template-columns: repeat({% if module.styles.grid.columns %}{{ module.styles.grid.columns }}{% endif %}, 325px);
+    gap: 16px;
+    {% if module.styles.grid.alignment.horizontal_align %}
+     {% if module.styles.grid.alignment.horizontal_align == "LEFT" %}
+       justify-content: flex-start;
+     {% elif module.styles.grid.alignment.horizontal_align == "CENTER" %}
+       justify-content: center;
+     {% elif module.styles.grid.alignment.horizontal_align == "RIGHT" %}
+       justify-content: flex-end;
+     {% endif %}
+    {% endif %}
+  }
+  .card-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+              {% if module.styles.card.alignment.horizontal_align %}
+            {% if module.styles.card.alignment.horizontal_align == "LEFT" %}
+              justify-content: flex-start;
+            {% elif module.styles.card.alignment.horizontal_align == "CENTER" %}
+              justify-content: center;
+            {% elif module.styles.card.alignment.horizontal_align == "RIGHT" %}
+              justify-content: flex-end;
+            {% endif %}
+          {% endif %}
+    width: 100%;
+    min-height: 156px;
+    {% if module.styles.card.color %}
+    background-color: rgba({{ module.styles.card.color.color|convert_rgb }}, {{ module.styles.card.color.opacity / 100 }});
+    {% endif %}
+    {{ module.styles.card.spacing.css }};
+    border-radius: {{ module.styles.card.radius ~ "px" }};
+  }
+  
+  .icon {
+    width:20px;
+    height:auto;
+    display:block;
+    fill:{{ module.styles.icon.color.color }}!important;
+    }
+      .card-icon h3 {
+    {{ module.styles.title.font.css }};
+    line-height: {{ module.styles.title.line_height ~ 'px' }};
+        {{ module.styles.title.textalignment.css }};
+    margin-bottom: 4px;
+  }
+  
+  .card-icon p {
+    {{ module.styles.description.font.css }};
+    line-height: {{ module.styles.description.line_height ~ 'px' }};
+    {{ module.styles.description.textalignment.css }};
+  }     
+    
+    @media (max-width: 1024px) {
+   .card-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 325px);
+    gap: 16px;
+    margin: 0 auto;
+    justify-content:center;
+    align-items:center;
+  }
+}
+    
+@media (max-width: 768px) {
+   .card-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 325px);
+    gap: 16px;
+    margin: 0 auto;
+    justify-content:center;
+    align-items:center;
+  }
+}
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}

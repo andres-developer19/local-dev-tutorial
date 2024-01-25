@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "categories" : [ "forms_and_buttons" ],
+  "icon" : "fontawesome-5.14.0:Alternate%20External%20Link:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 153210740108,
+  "label" : "Button single",
+  "is_available_for_new_content" : true
+}

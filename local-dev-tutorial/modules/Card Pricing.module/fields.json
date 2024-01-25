@@ -1,0 +1,277 @@
+[ {
+  "id" : "a706a18b-260f-e14e-1a12-44e7192c1404",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e24a148a-b8cd-426a-308b-3ba7f5fd2a82",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Pricing"
+  }, {
+    "id" : "185c5d3a-a9f4-c47c-e0c6-d41f4416ca2d",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, labore."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Pricing",
+    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, labore."
+  }
+}, {
+  "id" : "db9243d2-c378-4339-1dab-9381359fa748",
+  "name" : "card",
+  "display_width" : null,
+  "label" : "card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "6d9a4b9e-2704-803d-22ec-f4c781352e4c",
+    "name" : "tag",
+    "display_width" : null,
+    "label" : "Tag",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem ipsu"
+  }, {
+    "id" : "e9275227-6210-7e11-17ad-3dfbfc8b13e9",
+    "name" : "price",
+    "display_width" : null,
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "$600/mo"
+  }, {
+    "id" : "99979d03-7e98-5107-feab-c9b911ccbfcc",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem ipsum dolor sit"
+  }, {
+    "id" : "5bfbbeac-87c5-6d89-6ad2-8da73ba22d64",
+    "name" : "list",
+    "display_width" : null,
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "243d480b-51c4-c1f1-5d27-643e96e2c61b",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.0.10",
+      "type" : "icon",
+      "default" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
+    }, {
+      "id" : "0e7fe3f4-35a1-edd8-66a1-03cc3d750e35",
+      "name" : "description",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Lorem ipsum dolor kisi"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : [ {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    } ]
+  }, {
+    "id" : "3cb4c858-e4bb-6271-67f3-6e483868f7cb",
+    "name" : "text_button",
+    "display_width" : null,
+    "label" : "Text button",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "CTA Button"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "tag" : "Lorem ipsu",
+    "price" : "$600/mo",
+    "description" : "Lorem ipsum dolor sit",
+    "list" : [ {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    } ],
+    "text_button" : "CTA Button"
+  }, {
+    "tag" : "Lorem ipsu",
+    "price" : "$600/mo",
+    "description" : "Lorem ipsum dolor sit",
+    "list" : [ {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    } ],
+    "text_button" : "CTA Button"
+  }, {
+    "tag" : "Lorem ipsu",
+    "price" : "$600/mo",
+    "description" : "Lorem ipsum dolor sit",
+    "list" : [ {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    }, {
+      "icon" : {
+        "name" : "check-circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      },
+      "description" : "Lorem ipsum dolor kisi"
+    } ],
+    "text_button" : "CTA Button"
+  } ]
+} ]

@@ -1,0 +1,89 @@
+[ {
+  "id" : "97281265-7b2a-15a3-0461-28e1fb287b79",
+  "name" : "testimonial",
+  "display_width" : null,
+  "label" : "testimonial",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "f7e8d98d-ffc6-f3f1-e8ce-50f604379e5c",
+    "name" : "star",
+    "display_width" : null,
+    "label" : "star",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/starsnew_Mesa%20de%20trabajo%201%201.png",
+      "alt" : "starsnew_Mesa de trabajo 1 1",
+      "loading" : "lazy",
+      "width" : 18,
+      "height" : 16,
+      "max_width" : 18,
+      "max_height" : 16
+    }
+  }, {
+    "id" : "0d635134-fa97-1d3e-6e91-593aa5ee8604",
+    "name" : "number_stars",
+    "display_width" : null,
+    "label" : "Number stars",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 5,
+    "step" : 1,
+    "suffix" : "/5 ⭐",
+    "type" : "number",
+    "default" : 5
+  }, {
+    "id" : "2dc5a0a5-a68d-b745-f965-d3184b41396d",
+    "name" : "testimonial",
+    "display_width" : null,
+    "label" : "Testimonial",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Horem ipsum dolor sit amet, consectetur adipiscing elit."
+  }, {
+    "id" : "726d29cc-d184-18ed-2972-af6de687ed1a",
+    "name" : "name_",
+    "display_width" : null,
+    "label" : "Name ",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Esther Howard"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "star" : {
+      "size_type" : "auto",
+      "src" : "https://22529421.fs1.hubspotusercontent-na1.net/hubfs/22529421/starsnew_Mesa%20de%20trabajo%201%201.png",
+      "alt" : "starsnew_Mesa de trabajo 1 1",
+      "loading" : "lazy",
+      "width" : 18,
+      "height" : 16,
+      "max_width" : 18,
+      "max_height" : 16
+    },
+    "number_stars" : 5,
+    "testimonial" : "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Horem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "name_" : "Esther Howard"
+  } ]
+} ]

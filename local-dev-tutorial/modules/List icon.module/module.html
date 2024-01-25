@@ -1,0 +1,125 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+    
+    .container-list-icon {
+    {% if module.styles.container.display %}
+    display: {{ module.styles.container.display }};
+    {% endif %}
+    {{ module.styles.container.alignment.css }};  
+    {{ module.styles.container.spacing.css }};
+    {{ module.styles.container.border.css }};
+    }
+
+    .list-footer {
+    display: {{ module.styles.list.display }};
+    flex-direction: {{ module.styles.list.flex_direction }};
+    gap:{{ module.styles.list.gap ~ "px" }};
+    list-style:none;
+  }
+
+  .list-footer_item {
+    {{ module.styles.list_item.font.css }};
+    {% if module.styles.list_item.line_height %}
+    line-height: {{ module.styles.list_item.line_height ~ "px" }}; 
+    {% endif %}
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+{#
+  .list-footer_item:hover {
+    color: rgba({{ color_variant(module.styles.list_item.font.color, -80)|convert_rgb }}, {{ module.styles.list_item.font.opacity / 100 }}); 
+  }
+  #}
+    
+    
+    .list-footer_item .icons {
+      {% if module.styles.box_icon.width %}
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      vertical-align: middle;
+      border-radius: 100%;
+      width: {{ module.styles.box_icon.width ~ "px" }};
+      height: {{ module.styles.box_icon.width ~ "px" }};
+      {% endif %}
+      {% if module.styles.box_icon.color %}
+      background-color: {{ module.styles.box_icon.color.color }};
+      {% endif %}
+    }
+    
+    .list-footer_item .icons span svg g {
+    color: {{ module.styles.icon.colo.color }};
+    fill: {{ module.styles.icon.color.color }};
+    {{ module.styles.icon.spacing.css }};
+  }
+    
+      .list-footer_item .icons span svg {
+    width:{{ module.styles.icon.width ~ "px" }};
+    height:{{ module.styles.icon.height ~ "px" }};
+    {{ module.styles.icon.spacing.css }};
+  }
+    
+    
+    @media screen and (max-width:1023px) {
+    
+      .list-footer {
+      display: {{ module.styles.mobile.list.display }};
+      flex-direction: {{ module.styles.mobile.list.flex_direction }};
+      gap: {{ module.styles.mobile.list.gap ~ "px" }};
+      {% if module.styles.mobile.list.alignment.horizontal_align %}
+      {% if module.styles.mobile.list.alignment.horizontal_align == "LEFT" %}
+      justify-content: flex-start;
+      {% elif module.styles.mobile.list.alignment.horizontal_align == "CENTER" %}
+      justify-content: center;
+      {% elif module.styles.mobile.mobile.list.alignment.horizontal_align == "RIGHT" %}
+      justify-content: flex-end;
+      {% endif %}
+      {% endif %}  
+      {% if module.styles.mobile.list.alignment.vertical_align %}
+      {% if module.styles.mobile.list.alignment.vertical_align == "BOTTOM" %}
+      align-items: flex-start;
+      {% elif module.styles.mobile.list.alignment.vertical_align == "MIDDLE" %}
+      align-items: center;
+      {% elif module.styles.mobile.list.alignment.vertical_align == "TOP" %}
+      align-items: flex-end;
+      {% endif %}
+      {% endif %}
+      }
+      
+    }
+    
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}    
+<div class="container-list-icon">
+  <ul role="list" class="list-footer">
+    {% for item in module.list %}
+
+    <li>
+    {% set href = item.link.url.href %}
+	  {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+	  {% endif %} 
+    <a href="{{ href }}" class="list-footer_item"    
+		{% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+		{% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}>      
+      <span class="icons">
+      {% icon
+        name="{{ item.icon.name }}"
+        style="{{ item.icon.type }}"
+        unicode="{{ item.icon.unicode }}"
+        icon_set="{{ item.icon.icon_set }}"
+      %}
+      </span>
+      {{ item.text }}
+    </a>
+    </li>
+    
+    
+{% endfor %}
+  </ul>
+</div>

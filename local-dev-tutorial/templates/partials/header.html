@@ -2,246 +2,133 @@
   templateType: global_partial
   label: Website header
 -->
+<!-- Begin partial -->
 
-{% macro add_lang_switcher() %}
-  {% if get_asset_version('@hubspot/language_switcher') == 1 %}
-    {% module "language-switcher"
-      path="@hubspot/language_switcher",
-      label="Language switcher",
-      display_mode="localized"
-      styles={
-        "group_button" : {
-          "group_alignment" : {
-            "alignment" : {
-              "horizontal_align" : "RIGHT"
-            }
-          },
-          "group_background" : {
-            "color" : {
-              "color" : "#000000",
-              "opacity" : 0
-            }
-          },
-          "group_border" : {
-            "border" : {
-              "bottom" : {
-                "style" : "none"
-              },
-              "left" : {
-                "style" : "none"
-              },
-              "right" : {
-                "style" : "none"
-              },
-              "top" : {
-                "style" : "none"
-              }
-            }
-          },
-          "group_chevron" : {
-            "color" : {
-              "color" : "#516d8d",
-              "opacity" : 100
-            },
-            "size" : 10,
-            "spacing" : 10
-          },
-          "group_corner" : {
-            "radius" : 0
-          },
-          "group_icon" : {
-            "color" : {
-              "color" : "#516d8d",
-              "opacity" : 100
-            },
-            "size" : 15,
-            "spacing" : 10
-          },
-          "group_spacing" : {
-            "spacing" : {
-              "padding" : {
-                "bottom" : {
-                  "units" : "px",
-                  "value" : 7
-                },
-                "left" : {
-                  "units" : "px",
-                  "value" : 15
-                },
-                "right" : {
-                  "units" : "px",
-                  "value" : 15
-                },
-                "top" : {
-                  "units" : "px",
-                  "value" : 7
-                }
-              }
-            }
-          },
-          "group_text" : {
-            "font" : {
-              "color" : "#516d8d",
-              "size" : 18,
-              "size_unit" : "px"
-            }
-          }
-        },
-        "group_dropdown" : {
-          "group_border" : {
-            "border" : {
-              "bottom" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              },
-              "left" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              },
-              "right" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              },
-              "top" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              }
-            }
-          },
-          "group_box_shadow" : {
-            "add_box_shadow" : true
-          },
-          "group_hover" : {
-            "group_background" : {
-              "color" : {
-                "color" : "#f8fafc",
-                "opacity" : 100
-              }
-            }
-          },
-          "group_text" : {
-            "font" : {
-              "color" : "#516d8d",
-              "size" : 16,
-              "size_unit" : "px"
-            }
-          }
-        }
-      },
-      add_chevron_down=true,
-      icon_options="icon"
-    %}
-  {% else %}
-    {% module "language-switcher"
-      path="@hubspot/language_switcher",
-      label="Language switcher",
-      display_mode="localized"
-    %}
-    <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
-  {% endif %}
-{% endmacro %}
-<header class="header">
-
-  {# The link below is used for a navigation skipper which allows users navigating the site with their keyboard to skip over the site navigation. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
-
-  <a href="#main-content" class="header__skip">Skip to content</a>
-
-  {# Top header drag and drop area #}
-
-  {% dnd_area "header-top"
+{% dnd_area "header-top"
     label="Top header",
     class="content-wrapper"
   %}
-  {% end_dnd_area %}
 
-  {# Main header #}
-
-  <div class="header__container content-wrapper">
-
-    {# Header logo column #}
-
-    <div class="header__logo header__logo--main">
-      {% module "site_logo"
-        path="@hubspot/logo"
-        img={
-          "loading": "eager"
-        }
-      %}
-    </div>
-
-    {# Header navigation column #}
-
-    <div class="header__column">
-
-      {# Header navigation row one #}
-
-
-
-      <div class="header__row-1">
-        {% if content.translated_content.values()|selectattr("published")|length or is_listing_view and group.translations %}
-          <div class="header__language-switcher header--element">
-            <div class="header__language-switcher--label">
-              {{ add_lang_switcher() }}
-            </div>
-          </div>
-        {% endif %}
-        <div class="header__search header--element">
-          {% module "site_search"
-            path="@hubspot/search_input",
-            label="Search",
-            field_label="Search",
-            placeholder=""
-          %}
-        </div>
-      </div>
-
-      {# Header navigation row two #}
-
-      <div class="header__row-2">
-        <div class="header--toggle header__navigation--toggle"></div>
-        {% if content.translated_content|length or is_listing_view and group.translations %}
-          <div class="header--toggle header__language-switcher--toggle"></div>
-        {% endif %}
-        <div class="header--toggle header__search--toggle"></div>
-        <div class="header__close--toggle"></div>
-        <div class="header__navigation header--element">
-          {% module "navigation-primary"
-            path="../../modules/menu",
-            label="Primary navigation"
-          %}
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  {# Bottom header drag and drop area #}
-
-  {% dnd_area "header-bottom"
-    label="Bottom header",
-    class="content-wrapper"
+{% dnd_section 
+ max_width=1240,
+  background_color={
+    r: 255,
+    g: 255,
+    b: 255,
+    a: 1
+  },
+    padding={
+      "default" : {
+        "bottom" : "14px",
+        "top" : "14px"
+      }
+    }
   %}
-  {% end_dnd_area %}
 
-</header>
+
+    {% dnd_column
+    padding={
+    "top": 0,
+    "bottom": 0,
+    "left": 0,
+    "right": 0
+  },
+      offset=0,
+      width=6
+    %}
+      {% dnd_row %}
+        {% dnd_module
+        path="../../modules/Image",
+        content={
+        "image": {
+										"src": get_asset_url("../../asset/logo.svg")
+									}
+        },
+        styles={
+        "mobile":{
+        "textalignment":{
+        'text_align': 'CENTER'
+        },
+        "spacing":{
+        "margin":{
+        "bottom": { "value": 24, "units": "px" }
+        }
+        }
+        }
+        }
+       %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+
+    {% dnd_column
+    padding={
+    "top": 0,
+    "bottom": 0,
+    "left": 0,
+    "right": 0
+  },
+      offset=6,
+      width=6
+    %}
+      {% dnd_row %}
+        {% dnd_module
+        path='/Theme templates/Theme for Happy Agencies/modules/button single',
+        button_text={{ "Book a Demo" }},
+        show_icon={{ true }},
+        styles={
+        "background":{
+        "color":{
+        "color": "#FFFFFF",
+        "opacity": 100
+        }
+        },
+        "border":{
+      "border":{
+      "top": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      },
+      "bottom": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      },
+      "left": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      },
+      "right": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      }
+      }
+      },
+      "alignment":{
+      "alignment":{
+      "horizontal_align": "RIGHT"
+      }
+      },
+      "mobile":{
+      "alignment":{
+      "horizontal_align": "CENTER"
+      }
+      }
+      }
+       %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+
+  {% end_dnd_section %}
+
+  {% end_dnd_area %} 
+
+<!-- End partial -->

@@ -1,0 +1,328 @@
+<!--
+    templateType: global_partial
+    isAvailableForNewContent: false
+    label: Website header multi-row
+-->
+<style>
+  
+  .headerTop_width {
+  width:100%;
+    max-width:100%;
+    padding:0!important;
+  }
+  
+.headerTop_width .dnd-section .row-fluid {
+  max-width:1240px !important;
+  width:100%;
+  margin: 0 auto;
+  }
+</style>
+
+  {% dnd_area "header-top_multiRow"
+    label="Top header_multiRow",
+    class="content-wrapper headerTop_width"
+  %}
+  {% dnd_section class="section_headerTop_width"
+    background_color="#ECECEC",
+    vertical_alignment="MIDDLE",
+    full_width=true,
+    padding={
+    "top": 12,
+    "bottom": 12
+    }
+  %}
+  {% dnd_column
+  width= 6,
+  offset= 0
+  %}
+    {% dnd_row %}
+    {% dnd_module
+    path="../../modules/Link",
+    links=[
+    {
+    "text": "Investors"
+    },
+    {
+    "text": "Perks"
+    },
+    {
+    "text": "Case Studies"
+    },
+    {
+    "text": "Portfolio"
+    },
+    {
+    "text": "Affiliate Program"
+    }
+    ],
+    styles={
+    "container":{
+    "gap": 32
+    },
+    "links":{
+    'font':{
+    "size" : 14,
+    "size_unit" : "px",
+    "styles" :{
+      "text-decoration" : "none"
+    },
+    "font" : "Open Sans",
+    "fallback" : "serif",
+    "variant" : "700",
+    "font_set" : "GOOGLE",
+    'color': '#636363',
+    'opacity': 100
+    },
+    'line_height': 24
+    },
+    "mobile":{
+    "container":{
+    "display": "none"
+    }
+    }
+    }
+    %}
+  
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  
+  
+  {% dnd_column
+  width= 6,
+  offset= 6
+  %}
+    {% dnd_row %}
+    {% dnd_module
+    path="../../modules/Link",
+    links=[
+    {
+    "text": "Contact Sales"
+    },
+    {
+    "text": "Contact Support"
+    },
+    {
+    "text": "<strong>Log in</strong>"
+    }
+    ],
+    styles={
+    "container":{
+    "gap": 32,
+    "alignment":{
+      "horizontal_align": "RIGHT"
+    }
+    },
+    "links":{
+    'font':{
+    "size" : 14,
+    "size_unit" : "px",
+    "styles" :{
+      "text-decoration" : "none"
+    },
+    "font" : "Open Sans",
+    "fallback" : "serif",
+    "variant" : "700",
+    "font_set" : "GOOGLE",
+    'color': '#636363',
+    'opacity': 100
+    },
+    'line_height': 24
+    },
+    "mobile": {
+    "container":{
+    "alignment":{
+    "horizontal_align": "CENTER",
+    "vertical_align": "MIDDLE"
+    }
+    }
+    }
+    }
+    %}
+  
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  
+  {% end_dnd_section %}
+  {% end_dnd_area %} 
+
+      
+
+ {% dnd_area "header-bottom_multiRow"
+    label="Bottom header_multiRow",
+    class="content-wrapper"
+  %}
+  {% dnd_section
+    background_color="#FFFFFF",
+    vertical_alignment="MIDDLE",
+    max_width=1240,
+    padding={
+    "top": 12,
+    "bottom": 12
+    }
+  %}
+
+<div class="header__container content-wrapper">
+
+  {% dnd_column
+  width= 3,
+  offset= 0
+  %}
+    {% dnd_row %}
+
+    <div class="header__logo header__logo--main">
+    {% dnd_module
+    path="../../modules/Image Box"
+        image={
+          "alt": "Coworkers sitting together and smiling outside.",
+          "loading": "disabled",
+          "max_height": 30,
+          "max_width": 164,
+          "height": 30,
+          "width": 164,
+          "size_type": "auto_custom_max",
+          "src": get_asset_url("../../images/Logo/logo-happy.svg")
+          },
+          link={
+          "url":{
+          "content_id" : null,
+          "href" : "https://22529421.hs-sites.com/home",
+          "type" : "EXTERNAL"
+          }
+          }
+    %}
+  
+    {% end_dnd_module %}
+      
+    </div>
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  
+  {% dnd_column
+  width= 6,
+  offset= 3
+  %}
+    {% dnd_row %}
+<div class="header__row-2">
+        <div class="header--toggle header__navigation--toggle"></div>
+        {% if content.translated_content|length or is_listing_view and group.translations %}
+          <div class="header--toggle header__language-switcher--toggle"></div>
+        {% endif %}
+        {# <div class="header--toggle header__search--toggle"></div> #}
+        <div class="header__close--toggle"></div>
+        <div class="header__navigation header--element">
+    {% dnd_module "navigation-primary"
+            path='../../modules/menu',         
+            menu={{ context.menu || 153864786030 }},
+            label="Primary navigation",
+            styles={
+            "text": {
+            "color":{
+            "color": "#000000",
+            "opacity": 100
+            }
+            },
+            "mobile":{
+            "background_color":{
+            "color": "#FFFFFF",
+            "opacity": 100
+            }
+            }
+            }
+          %}
+  
+    {% end_dnd_module %}
+          
+        </div>
+      </div>
+          
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  
+  {% dnd_column
+  width= 3,
+  offset= 9
+  %}
+    {% dnd_row %}
+ <div class="header-cta">
+    {% dnd_module "btn-cta"
+      path="@hubspot/Call-to-Action",
+      offset=0,
+      width=6,
+      guid={{ 153357167915 }}
+      %}
+  
+    {% end_dnd_module %}
+
+    {% dnd_module "btn-cta"
+      path="@hubspot/Call-to-Action",
+      offset=6,
+      width=6,
+      guid={{ 153349637429 }}
+      %}
+  
+    {% end_dnd_module %}
+</div>
+{#
+
+
+      button_text={{ context.button_text || "Get Started free" }},
+      label="Get Started free"
+
+      styles={
+      "background":{
+      "color":{
+      "color": "#FF459B",
+      "opacity": 100
+      }
+      },
+      "spacing":{
+      "spacing":{
+      "padding": {
+       "top": { "value": 10, "units": "px" },
+       "bottom": { "value": 10, "units": "px" },
+       "left": { "value": 40, "units": "px" },
+       "right":{ "value": 40, "units": "px" }
+      }
+      }
+      },
+      "border":{
+      "border":{
+      "top": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "bottom": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "left": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "right": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      }
+      }
+      }
+      },
+      #}
+
+    
+
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+
+</div>
+  {% end_dnd_section %}  
+  {% end_dnd_area %}

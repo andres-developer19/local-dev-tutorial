@@ -1,0 +1,132 @@
+<!--
+  templateType: global_partial
+  label: Header no navigation
+-->
+<header class="header">
+
+  {# Top header drag and drop area #}
+
+  {% dnd_area "header-top"
+    label="Top header",
+    class="content-wrapper"
+  %}
+  {% end_dnd_area %}
+  <div class="header__container content-wrapper">
+  {# {% dnd_section
+  vertical_align="MIDDLE"
+  %}
+
+  Main header #}
+
+  
+
+    {# Logo #}
+
+    <div class="header__logo header-logo">
+      {% module "site_logo"
+        path="../../modules/Image Box"
+        image={
+          "alt": "Coworkers sitting together and smiling outside.",
+          "loading": "disabled",
+          "max_height": 30,
+          "max_width": 164,
+          "height": 30,
+          "width": 164,
+          "size_type": "auto_custom_max",
+          "src": get_asset_url("../../images/Logo/Logo-clearbox.png")
+          },
+        offset=0,
+        width=3
+      %}
+      {# {% end_dnd_module %} #}
+    </div>
+    
+    
+    <div class="header__row-2">
+        <div class="header--toggle header__navigation--toggle"></div>
+        {# {% if content.translated_content|length or is_listing_view and group.translations %}
+          <div class="header--toggle header__language-switcher--toggle"></div>
+        {% endif %}
+        <div class="header--toggle header__search--toggle"></div> #}
+        <div class="header__close--toggle"></div>
+      <div class="header__navigation header__nonavigation">
+      {% module "menu-LP"
+      path="../../modules/menu",
+      menu={{ context.menu || 133263144502 }},
+      offset=3,
+      width=6,
+            styles={
+            "mobile":{
+            "background_color":{
+            "color": "#213343",
+            "opacity": 100
+            }
+            }
+            }
+      %}
+      {# {% end_dnd_module %} #}
+      <div class="header-cta">
+      {% module "cta"
+      path='/Theme templates/Theme for Happy Agencies/modules/button single',
+      button_text={{ context.button_text || "Get Started →" }},
+      styles={
+      "background":{
+      "color":{
+      "color": "#FFFFFF",
+      "opacity": 0
+      }
+      },
+      "spacing":{
+      "spacing":{
+      "padding": {
+       "top": { "value": 10, "units": "px" },
+       "bottom": { "value": 10, "units": "px" },
+       "left": { "value": 40, "units": "px" },
+       "right":{ "value": 40, "units": "px" }
+      }
+      }
+      },
+      "border":{
+      "border":{
+      "top": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "bottom": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "left": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "right": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#ffffff"
+      }
+      }
+      }
+      },
+      offset=9,
+      width=3
+      %}
+        </div>
+      {# {% end_dnd_module %} #}
+    </div>
+    </div>
+
+  {# Bottom header drag and drop area
+
+  {% end_dnd_section %} #}
+</div>
+  
+
+</header>

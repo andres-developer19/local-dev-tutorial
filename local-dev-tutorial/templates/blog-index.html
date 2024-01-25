@@ -2,25 +2,23 @@
   templateType: blog_listing
   isAvailableForNewContent: true
   label: Boilerplate - blog listing
-  screenshotPath: ../images/template-previews/blog-index.png
+  screenshotPath: ../images/section-previews/Bright Ideas.jpg
 -->
-{% set template_css = "../../css/templates/blog.css" %}
 {% extends "./layouts/base.html" %}
 
 {% block body %}
 {% dnd_area "dnd_area"
   label="Main section",
-  class="body-container body-container--blog-index"
+  class=""
 %}
 
   {# Hero banner #}
 
   {% dnd_section
-    background_color="#f8fafc",
-    max_width=600,
+    max_width=1240,
     padding={
       "default": {
-        "top": 80,
+        "top": 100,
         "right": 0,
         "bottom": 80,
         "left": 0
@@ -33,32 +31,253 @@
       }
     }
   %}
-    {% dnd_column %}
+    {% dnd_column
+    %}
       {% dnd_row %}
         {% dnd_module
-          path="@hubspot/rich_text",
-          html='<div style="text-align: center;"><h1>Blog</h1><p>Use this space to tell everyone about what you have to offer.</p></div>'
+          path='../modules/Main post'
         %}
         {% end_dnd_module %}
       {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/blog_subscribe",
-          title=""
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
+    {% end_dnd_column %}    
+
   {% end_dnd_section %}
 
   {# Blog listings and pagination #}
 
   {% dnd_section
-    vertical_alignment="TOP"
+    max_width=1240,
+    padding={
+      "default": {
+        "top": 80,
+        "right": 0,
+        "bottom": 80,
+        "left": 0
+      },
+      "mobile": {
+        "top": 80,
+        "right": 10,
+        "bottom": 80,
+        "left": 10
+      }
+    }
   %}
     {% dnd_column %}
+
       {% dnd_row %}
-        {% dnd_module path="@hubspot/blog_listing" %}
+        {% dnd_module
+          path='../modules/Heading Box',
+          heading={{ context.heading or 'Editorials' }},
+          title={{ context.title or 'Recient Blog Posts' }},
+          styles={
+          "label_":{
+          'font':{
+          "size" : 18,
+          "size_unit" : "px",
+          "styles" :{
+            "text-decoration" : "none"
+          },
+          "font" : "Montserrat",
+          "fallback" : "serif",
+          "variant" : "700",
+          "font_set" : "GOOGLE",
+          'color': '#ED2D40',
+          'opacity': 100
+          },
+          'line_height': 28,
+          'textalignment':{
+          'text_align': 'LEFT'
+          }
+          },
+          "title":{
+          'font':{
+          "size" : 20,
+          "size_unit" : "px",
+          "styles" :{
+            "text-decoration" : "none"
+          },
+          "font" : "Montserrat",
+          "fallback" : "serif",
+          "variant" : "700",
+          "font_set" : "GOOGLE",
+          'color': '#000000',
+          'opacity': 100
+          },
+          'line_height': 32,
+          'textalignment':{
+          'text_align': 'LEFT'
+          }
+          },
+      "mobile":{
+      "label_":{
+      'font':{
+      "size" : 18,
+      "size_unit" : "px",
+      "styles" :{
+        "text-decoration" : "none"
+      },
+      "font" : "Montserrat",
+      "fallback" : "serif",
+      "variant" : "700",
+      "font_set" : "GOOGLE",
+      'color': '#ED2D40',
+      'opacity': 100
+      },
+      'line_height': 29,
+      'textalignment':{
+      'text_align': 'CENTER'
+      }
+      },
+      "title":{
+      'font':{
+      "size" : 32,
+      "size_unit" : "px",
+      "styles" :{
+        "text-decoration" : "none"
+      },
+      "font" : "Montserrat",
+      "fallback" : "serif",
+      "variant" : "700",
+      "font_set" : "GOOGLE",
+      'color': '#000000',
+      'opacity': 100
+      },
+      'line_height': 42,
+      'textalignment':{
+      'text_align': 'CENTER'
+      }
+      }
+      }
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      {% dnd_row %}
+        {% dnd_module path='../modules/Blog post',
+        blog={{ context.blog || 117744127040 }},
+        show_image={{ false }},
+        tag_time={{ false }},
+        styles={
+        "grid":{
+        "columns": 3
+        },
+        "card_image":{
+        "radius":{
+        "border_top_left_radius": 16,
+        "border_top_right_radius": 16
+        }
+        },
+        "card_content":{
+        "flex_direction": "column",
+        "background":{
+        "color": "#FFFFFF",
+        "opacity": 100
+        },
+        "spacing":{
+        "padding": {
+         "top": { "value": 40, "units": "px" },
+         "bottom": { "value": 46, "units": "px" },
+         "left": { "value": 40, "units": "px" },
+         "right":{ "value": 40, "units": "px" }
+        }
+        },
+        "border_bottom_left_radius": 16,
+        "border_bottom_right_radius": 16
+        },
+        "tag":{
+      'font':{
+      "size" : 14,
+      "size_unit" : "px",
+      "styles" :{
+        "text-decoration" : "none"
+      },
+      "font" : "Montserrat",
+      "fallback" : "serif",
+      "variant" : "500",
+      "font_set" : "GOOGLE",
+      'color': '#DC3B37',
+      'opacity': 100
+      },
+      'line_height': 26
+      },
+      "title":{
+      'font':{
+      "size" : 20,
+      "size_unit" : "px",
+      "styles" :{
+        "text-decoration" : "none"
+      },
+      "font" : "Montserrat",
+      "fallback" : "serif",
+      "variant" : "700",
+      "font_set" : "GOOGLE",
+      'color': '#000000',
+      'opacity': 100
+      },
+      'line_height': 30
+      },
+      "description":{
+      'font':{
+      "size" : 16,
+      "size_unit" : "px",
+      "styles" :{
+        "text-decoration" : "none"
+      },
+      "font" : "Montserrat",
+      "fallback" : "serif",
+      "variant" : "400",
+      "font_set" : "GOOGLE",
+      'color': '#414141',
+      'opacity': 100
+      },
+      'line_height': 28
+      },
+        "button":{
+      'font':{
+      "size" : 16,
+      "size_unit" : "px",
+      "styles" :{
+        "text-decoration" : "none"
+      },
+      "font" : "Montserrat",
+      "fallback" : "serif",
+      "variant" : "600",
+      "font_set" : "GOOGLE",
+      'color': '#000',
+      'opacity': 100
+      },
+      'line_height': 29,
+      "border":{
+      "top": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      },
+      "bottom": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      },
+      "left": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      },
+      "right": {
+        "width": { "value": 1, "units": "px" },
+        "opacity": 100,
+        "style": "solid",
+        "color": "#000000"
+      }
+      },
+      "radius": 4
+        }
+        
+        }
+        %}
         {% end_dnd_module %}
       {% end_dnd_row %}
       {% dnd_row %}
@@ -67,6 +286,7 @@
       {% end_dnd_row %}
     {% end_dnd_column %}
   {% end_dnd_section %}
-
 {% end_dnd_area %}
 {% endblock body %}
+
+
